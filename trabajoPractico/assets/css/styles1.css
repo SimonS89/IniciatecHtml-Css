@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+/* CSS del archivo Index*/
+/* header */
+.header_index {
+  position: relative;
+  background-color: black;
+  height: 300px;
+}
+
+.logo {
+  object-fit: contain;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  left: 800px;
+  top: 250px;
+}
+
+/* CSS del archivo About*/
+.header_about {
+}
+
+/* CSS del archivo Contact*/
