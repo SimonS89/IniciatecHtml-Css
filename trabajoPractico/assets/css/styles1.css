@@ -59,6 +59,7 @@ h1 {
   justify-content: space-around;
   border: 3px solid #5fa199;
   padding: 30px;
+  background-color: #5fa199;
 }
 
 .main_index nav {
@@ -87,14 +88,16 @@ h1 {
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #5fa199;
+  background-color: #211915;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
 .nav_uno a:hover {
-  background-color: #3d948a;
+  background-color: #f8e12e;
+  color: #211915;
+  font-weight: bold;
 }
 
 .nav_uno a:active {
@@ -113,6 +116,7 @@ nav .disabled {
 
 p {
   margin-left: 30px;
+  font-weight: bold;
 }
 
 h3 {
@@ -131,7 +135,7 @@ h3 {
 .fa-duotone {
   margin-right: 5px;
   font-size: 30px;
-  text-shadow: 0 10px 10px #5fa199;
+  text-shadow: 0 10px 10px #211915;
 }
 
 .fa-facebook {
@@ -158,6 +162,10 @@ h3 {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+mark {
+  background-color: #f8e12e;
 }
 
 /* Footer */
