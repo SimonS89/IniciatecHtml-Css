@@ -45,8 +45,8 @@ h1 {
   width: 70%;
 }
 
-.logo {
-  height: 50px;
+.logo_uno {
+  height: 4rem;
   width: auto;
   transform: scale(3);
 }
@@ -65,22 +65,22 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 20%;
+  min-width: 15vw;
 }
 
-.main_index section {
+.main_index article {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   width: 70%;
-  min-height: 25vh;
+  min-height: 30vh;
 }
 
 .main_index section article {
   margin-bottom: 1px;
 }
 
-nav a {
+.nav_uno a {
   padding: 5px 15px;
   font-size: 14px;
   text-align: center;
@@ -93,33 +93,45 @@ nav a {
   box-shadow: 0 9px #999;
 }
 
-nav a:hover {
+.nav_uno a:hover {
   background-color: #3d948a;
 }
 
-nav a:active {
+.nav_uno a:active {
   background-color: #3d948a;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+nav .disabled {
+  background-color: red !important;
 }
 
 p {
   margin-left: 30px;
 }
 
+h3 {
+  display: inline;
+}
+
 .ul_contact {
   display: flex;
-  justify-content: space-around;
-  width: 25vw;
+  justify-content: space-evenly;
+  width: 20vw;
   flex-wrap: wrap;
 }
 
 .fa-solid,
 .fa-brands,
 .fa-duotone {
+  margin-right: 5px;
   font-size: 30px;
-  text-shadow: 0 0 10px #5fa199;
-  margin-right: 3px;
+  text-shadow: 0 10px 10px #5fa199;
 }
 
 .fa-facebook {
@@ -165,6 +177,12 @@ footer {
 
 .home_footer {
   padding: 45px;
+}
+
+.nav_dos,
+.logo_dos,
+.img_dos {
+  display: none !important;
 }
 
 /* CSS del archivo About*/
