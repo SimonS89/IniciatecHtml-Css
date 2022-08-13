@@ -11,23 +11,123 @@
 }
 /* CSS del archivo Index*/
 /* header */
-.header_index {
-  position: relative;
-  background-color: black;
-  height: 300px;
+
+h1 {
+  font-size: 3rem;
+  color: #f8e12e;
+  background-color: #211915;
+  display: inline;
+  border: 3px solid #5fa199;
+}
+
+.header {
+  background-image: url(../img/design1_image1.jpg);
+  background-repeat: no-repeat;
+  height: 40vh;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* free */
+
+.container_secundario {
+  background-color: #211915;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo_secundario {
+  text-align: center;
+  color: #f8e12e;
+  font-size: 2em;
+  width: 70%;
 }
 
 .logo {
-  object-fit: contain;
-  width: 128px;
-  height: 128px;
-  position: absolute;
-  left: 800px;
-  top: 250px;
+  height: 50px;
+  width: auto;
+  transform: scale(3);
+}
+
+/* main */
+
+.main_index {
+  margin: 15px;
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid #5fa199;
+  padding: 30px;
+}
+
+.main_index nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.main_index section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 70%;
+  min-height: 25vh;
+}
+
+.main_index section article {
+  margin-bottom: 1px;
+}
+
+nav a {
+  padding: 5px 15px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #5fa199;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+nav a:hover {
+  background-color: #3d948a;
+}
+
+nav a:active {
+  background-color: #3d948a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.ul_contact {
+  display: flex;
+  justify-content: space-around;
+  width: 25vw;
+  flex-wrap: wrap;
+}
+
+.fa-brand {
+}
+
+.fa-solid {
+  font-size: 20px;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #211915;
+  color: #f8e12e;
+  height: 10vh;
 }
 
 /* CSS del archivo About*/
-.header_about {
-}
 
 /* CSS del archivo Contact*/
