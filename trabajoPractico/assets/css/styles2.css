@@ -28,6 +28,14 @@ h1 {
   background-color: #f8e12e;
 }
 
+.nav_dos {
+  min-width: 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 .nav_dos a {
   padding: 5px 15px;
   font-size: 14px;
