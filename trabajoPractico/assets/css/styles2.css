@@ -23,8 +23,8 @@ h1 {
 .header_dos {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  /* justify-content: flex-start; */
+  /* justify-content: space-around; */
+  justify-content: flex-start;
   overflow: hidden;
   width: 100%;
   background-color: #f8e12e;
@@ -38,10 +38,10 @@ h1 {
   align-items: center;
   gap: 10px;
   /* */
-  /* position: absolute;
+  position: absolute;
   top: 20px;
   right: 150px;
-  z-index: 1; */
+  z-index: 1;
 }
 
 .nav_dos a {
@@ -82,8 +82,8 @@ nav .disabled {
   background-repeat: repeat;
   object-fit: cover;
   /* */
-  /* z-index: -1;
-  position: relative; */
+  z-index: -1;
+  position: relative;
 }
 
 /* free */
