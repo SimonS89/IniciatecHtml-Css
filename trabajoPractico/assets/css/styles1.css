@@ -101,7 +101,7 @@ h1 {
 }
 
 .nav_uno a:active {
-  background-color: #3d948a;
+  background-color: #d8bf04;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -176,15 +176,15 @@ footer {
   align-items: center;
   background-color: #211915;
   color: #f8e12e;
-  height: 10vh;
+  height: 6vh;
 }
 
 .contact_footer {
-  padding: 45px;
+  padding: 25px;
 }
 
 .home_footer {
-  padding: 45px;
+  padding: 25px;
 }
 
 .nav_dos,

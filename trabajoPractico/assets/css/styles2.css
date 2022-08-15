@@ -13,7 +13,7 @@
 /* header */
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #211915;
   background-color: #f8e12e;
   font-weight: bolder;
@@ -24,6 +24,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* justify-content: flex-start; */
   overflow: hidden;
   width: 100%;
   background-color: #f8e12e;
@@ -36,9 +37,10 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  /* */
   /* position: absolute;
-  top: 4vh;
-  right: 40vh;
+  top: 20px;
+  right: 150px;
   z-index: 1; */
 }
 
@@ -79,7 +81,9 @@ nav .disabled {
   height: 42vh;
   background-repeat: repeat;
   object-fit: cover;
-  z-index: -1;
+  /* */
+  /* z-index: -1;
+  position: relative; */
 }
 
 /* free */
@@ -104,7 +108,6 @@ nav .disabled {
 /* main */
 
 .main_index {
-  margin: 10px;
   display: flex;
   justify-content: space-around;
   border: 3px solid #5fa199;
@@ -201,8 +204,7 @@ footer {
   align-items: center;
   background-color: #f8e12e;
   color: #211915;
-  height: 8vh;
-  font-size: 1.3rem;
+  height: 6vh;
   font-weight: bolder;
   border: 3px solid #5fa199;
 }
