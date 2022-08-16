@@ -9,6 +9,81 @@
   border: none;
   outline: none;
 }
+
+/* header */
+
+h1 {
+  font-size: 2rem;
+  color: #211915;
+  background-color: #f8e12e;
+  font-weight: bolder;
+  /* width: 70%; */
+}
+
+.header {
+  background-image: url(../img/design1_image2.jpg);
+  background-repeat: no-repeat;
+  height: 42vh;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+
+.header_dos {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  justify-content: flex-start;
+  overflow: hidden;
+  width: 100%;
+  background-color: #f8e12e;
+}
+
+.nav_dos {
+  min-width: 20%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  /* */
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  z-index: 1;
+}
+
+.nav_dos a {
+  padding: 5px 15px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #252525;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  color: #d3f7ec;
+}
+
+.nav_dos a:hover {
+  background-color: #3d948a;
+}
+
+.nav_dos a:active {
+  background-color: #3d948a;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+nav .disabled {
+  background-color: red !important;
+}
+
 .img_dos {
   width: 100%;
   height: 42vh;
@@ -18,62 +93,42 @@
   z-index: -1;
   position: relative;
 }
-h1 {
-  font-size: 3rem;
-  color: #f8e12e;
-  background-color: #211915;
-  display: inline;
-  border: 3px solid #5fa199;
-}
-
-.header {
-  background-image: url(../img/design1_image1.jpg);
-  background-repeat: no-repeat;
-  height: 44vh;
-  background-size: cover;
-  background-position: 50% 40%;
-}
 
 /* free */
 
 .container_secundario {
-  background-color: #211915;
+  background-color: #f8e12e;
   display: flex;
-  height: 10vh;
+  height: 7vh;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  border: 3px solid #5fa199;
 }
 
 .titulo_secundario {
   text-align: center;
-  color: #f8e12e;
+  color: #211915;
   font-size: 2em;
-  width: 70%;
-}
-
-.logo_uno {
-  height: 4rem;
-  width: auto;
-  transform: scale(3);
+  font-weight: bolder;
 }
 
 /* main */
 
 .main_index {
-  margin: 15px;
   display: flex;
   justify-content: space-around;
   border: 3px solid #5fa199;
-  padding: 30px;
-  background-color: #5fa199;
+  padding: 20px;
+  align-items: center;
+  background-color: #211915;
+  color: #f8e12e;
 }
 
-.main_index nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  min-width: 15vw;
-  max-height: 30vh;
+strong i {
+  color: #f8e12e;
+  font-weight: bolder;
+  font-size: 1.1rem;
 }
 
 .main_index article {
@@ -84,31 +139,14 @@ h1 {
   min-height: 30vh;
 }
 
-.nav_uno a {
-  padding: 5px 15px;
-  font-size: 14px;
-  text-align: center;
-  color: #fff;
-  background-color: #211915;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+.main_index section article {
+  margin-bottom: 1px;
 }
 
-.nav_uno a:hover {
-  background-color: #f8e12e;
-  color: #211915;
-  font-weight: bold;
-}
-
-.nav_uno a:active {
-  background-color: #d8bf04;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-nav .disabled {
-  background-color: red !important;
-  pointer-events: none;
+.logo_dos {
+  height: 36vh;
+  width: auto;
+  object-fit: cover;
 }
 
 p {
@@ -130,8 +168,9 @@ h3 {
 .fa-solid,
 .fa-brands,
 .fa-duotone {
+  margin-right: 5px;
   font-size: 30px;
-  text-shadow: 0 10px 10px #211915;
+  text-shadow: 0 10px 10px #5fa199;
 }
 
 .fa-facebook {
@@ -160,26 +199,25 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+mark {
+  background-color: #f8e12e;
+  color: black !important;
+}
+
 /* Footer */
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #211915;
-  color: #f8e12e;
+  background-color: #f8e12e;
+  color: #211915;
   height: 6vh;
+  font-weight: bolder;
+  border: 3px solid #5fa199;
 }
 
-.contact_footer {
-  padding: 25px;
-}
-
-.home_footer {
-  padding: 25px;
-}
-
-.nav_dos,
-.logo_dos {
+.nav_uno,
+.logo_uno {
   display: none !important;
 }

@@ -23,7 +23,7 @@ h1 {
 .header {
   background-image: url(../img/design1_image1.jpg);
   background-repeat: no-repeat;
-  height: 44vh;
+  height: 42vh;
   background-size: cover;
   background-position: 50% 40%;
 }
@@ -33,7 +33,7 @@ h1 {
 .container_secundario {
   background-color: #211915;
   display: flex;
-  height: 10vh;
+  height: 8vh;
   justify-content: center;
   align-items: center;
 }
@@ -52,13 +52,16 @@ h1 {
 }
 
 /* main */
+main {
+  max-height: 50vh;
+}
 
 .main_index {
   margin: 15px;
   display: flex;
   justify-content: space-around;
   border: 3px solid #5fa199;
-  padding: 30px;
+  padding: 20px;
   background-color: #5fa199;
 }
 
