@@ -55,7 +55,7 @@ h1:after {
 .container_secundario {
   background-color: #001647;
   display: flex;
-  height: 10vh;
+  height: 8vh;
   justify-content: center;
   align-items: center;
 }
@@ -85,7 +85,10 @@ h1:after {
 .main_index {
   margin: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  gap: 20px;
+  align-items: center;
   border: 3px solid #5fa199;
   padding: 30px;
   background-color: #001647;
@@ -94,10 +97,11 @@ h1:after {
 
 .main_index nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   min-width: 15vw;
   max-height: 30vh;
+  gap: 10px;
 }
 
 .main_index article {
@@ -128,7 +132,7 @@ section:hover {
 nav .disabled {
   background-color: #211915 !important;
   pointer-events: none;
-  color: white;
+  color: red;
 }
 
 p {
