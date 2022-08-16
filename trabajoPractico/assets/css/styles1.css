@@ -23,9 +23,9 @@ h1 {
 .header {
   background-image: url(../img/design1_image1.jpg);
   background-repeat: no-repeat;
-  height: 40vh;
+  height: 44vh;
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 40%;
 }
 
 /* free */
@@ -67,6 +67,7 @@ h1 {
   flex-direction: column;
   justify-content: space-around;
   min-width: 15vw;
+  max-height: 30vh;
 }
 
 .main_index article {
@@ -77,19 +78,12 @@ h1 {
   min-height: 30vh;
 }
 
-.main_index section article {
-  margin-bottom: 1px;
-}
-
 .nav_uno a {
   padding: 5px 15px;
   font-size: 14px;
   text-align: center;
-  cursor: pointer;
-  outline: none;
   color: #fff;
   background-color: #211915;
-  border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
@@ -106,12 +100,9 @@ h1 {
   transform: translateY(4px);
 }
 
-.disabled {
-  pointer-events: none;
-}
-
 nav .disabled {
   background-color: red !important;
+  pointer-events: none;
 }
 
 p {
@@ -133,7 +124,6 @@ h3 {
 .fa-solid,
 .fa-brands,
 .fa-duotone {
-  margin-right: 5px;
   font-size: 30px;
   text-shadow: 0 10px 10px #211915;
 }
@@ -164,10 +154,6 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
-mark {
-  background-color: #f8e12e;
-}
-
 /* Footer */
 
 footer {
@@ -188,11 +174,6 @@ footer {
 }
 
 .nav_dos,
-.logo_dos,
-.img_dos {
+.logo_dos {
   display: none !important;
 }
-
-/* CSS del archivo About*/
-
-/* CSS del archivo Contact*/

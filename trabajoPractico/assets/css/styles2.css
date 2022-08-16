@@ -13,11 +13,19 @@
 /* header */
 
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #211915;
   background-color: #f8e12e;
   font-weight: bolder;
   /* width: 70%; */
+}
+
+.header {
+  background-image: url(../img/design1_image1.jpg);
+  background-repeat: no-repeat;
+  height: 45.5vh;
+  background-size: cover;
+  background-position: 50% 30%;
 }
 
 .header_dos {
@@ -28,6 +36,7 @@ h1 {
   overflow: hidden;
   width: 100%;
   background-color: #f8e12e;
+  height: 8vh;
 }
 
 .nav_dos {
@@ -39,7 +48,7 @@ h1 {
   gap: 10px;
   /* */
   position: absolute;
-  top: 20px;
+  top: 53px;
   right: 150px;
   z-index: 1;
 }
@@ -48,32 +57,29 @@ h1 {
   padding: 5px 15px;
   font-size: 14px;
   text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #252525;
-  border: none;
+  background-color: #3d948a;
   border-radius: 15px;
   box-shadow: 0 9px #999;
   color: #d3f7ec;
+  font-weight: bolder;
 }
 
 .nav_dos a:hover {
-  background-color: #3d948a;
+  background-color: #211915;
 }
 
 .nav_dos a:active {
-  background-color: #3d948a;
+  background-color: black;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
 .disabled {
-  pointer-events: none;
 }
 
 nav .disabled {
   background-color: red !important;
+  pointer-events: none;
 }
 
 .img_dos {
@@ -103,6 +109,8 @@ nav .disabled {
   color: #211915;
   font-size: 2em;
   font-weight: bolder;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 }
 
 /* main */
@@ -117,10 +125,11 @@ nav .disabled {
   color: #f8e12e;
 }
 
-strong i {
+strong {
   color: #f8e12e;
   font-weight: bolder;
   font-size: 1.1rem;
+  font-style: italic;
 }
 
 .main_index article {
@@ -160,7 +169,6 @@ h3 {
 .fa-solid,
 .fa-brands,
 .fa-duotone {
-  margin-right: 5px;
   font-size: 30px;
   text-shadow: 0 10px 10px #5fa199;
 }
@@ -189,11 +197,6 @@ h3 {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-mark {
-  background-color: #f8e12e;
-  color: black !important;
 }
 
 /* Footer */
