@@ -23,7 +23,7 @@ h1 {
 .header {
   background-image: url(../img/design1_image2.jpg);
   background-repeat: no-repeat;
-  height: 42vh;
+  height: 44vh;
   background-size: cover;
   background-position: 50% 40%;
 }
@@ -38,7 +38,7 @@ h1 {
   background-color: #f8e12e;
 }
 
-.nav_dos {
+.nav_uno {
   min-width: 20%;
   display: flex;
   justify-content: space-between;
@@ -52,7 +52,7 @@ h1 {
   z-index: 1;
 }
 
-.nav_dos a {
+.nav_uno a {
   padding: 5px 15px;
   font-size: 14px;
   text-align: center;
@@ -66,11 +66,11 @@ h1 {
   color: #d3f7ec;
 }
 
-.nav_dos a:hover {
+.nav_uno a:hover {
   background-color: #3d948a;
 }
 
-.nav_dos a:active {
+.nav_uno a:active {
   background-color: #3d948a;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -84,22 +84,12 @@ nav .disabled {
   background-color: red !important;
 }
 
-.img_dos {
-  width: 100%;
-  height: 42vh;
-  background-repeat: repeat;
-  object-fit: cover;
-  /* */
-  z-index: -1;
-  position: relative;
-}
-
 /* free */
 
 .container_secundario {
   background-color: #f8e12e;
   display: flex;
-  height: 7vh;
+  height: 10vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -117,12 +107,13 @@ nav .disabled {
 
 .main_index {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   border: 3px solid #5fa199;
   padding: 20px;
   align-items: center;
   background-color: #211915;
   color: #f8e12e;
+  min-height: 40vh;
 }
 
 strong i {
@@ -143,10 +134,13 @@ strong i {
   margin-bottom: 1px;
 }
 
-.logo_dos {
+.logo_uno {
   height: 36vh;
   width: auto;
   object-fit: cover;
+  position: relative;
+  right: 600px;
+  top: 150px;
 }
 
 p {
@@ -217,7 +211,7 @@ footer {
   border: 3px solid #5fa199;
 }
 
-.nav_uno,
+/* .nav_uno,
 .logo_uno {
   display: none !important;
-}
+} */
