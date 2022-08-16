@@ -102,6 +102,7 @@ h1:after {
   min-width: 15vw;
   max-height: 30vh;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .main_index article {
