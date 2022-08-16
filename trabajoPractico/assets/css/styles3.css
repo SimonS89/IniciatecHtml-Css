@@ -42,11 +42,12 @@ h1:after {
 }
 
 .header {
+  background-color: #7eb4e2;
   background-image: url(../img/hockey3.jpg);
   background-repeat: no-repeat;
   height: 44vh;
   background-size: cover;
-  background-position: 50% 55%;
+  background-position: 50% 65%;
 }
 
 /* free */
@@ -62,7 +63,7 @@ h1:after {
 .titulo_secundario {
   text-align: center;
   color: #f8e12e;
-  font-size: 2em;
+  font-size: 3em;
   width: 70%;
   text-shadow: -1px 1px 0 #211915, 1px 1px 0 #211915, 1px -1px 0 #211915,
     -1px -1px 0 #211915;
@@ -123,32 +124,6 @@ section:hover {
   border: 2px solid #f8e12e;
   background-color: #3b5998;
 }
-
-/* .nav_uno a {
-  padding: 5px 15px;
-  font-size: 14px;
-  text-align: center;
-  color: #211915;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-  font-weight: bolder;
-}
-
-.nav_uno a:hover {
-  /* background-color: #f8e12e;
-  color: #211915;
-  font-weight: bold; */
-/* background-color: black;
-  color: white;
-  font-weight: bolder;
-  border: 2px solid black; */
-/* } */
-
-/* .nav_uno a:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}  */
 
 nav .disabled {
   background-color: #211915 !important;
