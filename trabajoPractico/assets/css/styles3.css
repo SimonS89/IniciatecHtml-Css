@@ -71,11 +71,12 @@ h1:after {
 .logo_uno {
   height: 4rem;
   width: auto;
-  transition: transform 2s;
+  transform: scale(3);
+  transition: all 0.5s ease;
 }
 
 .logo_uno:hover {
-  transform: scale(3);
+  transform: rotate(360deg);
 }
 
 /* main */
@@ -107,9 +108,14 @@ h1:after {
   min-height: 30vh;
 }
 
+.contact {
+  align-items: center;
+}
+
 section {
   border: 2px solid white;
   padding: 10px;
+  text-align: center;
 }
 
 section:hover {
@@ -176,6 +182,14 @@ strong {
 .fa-duotone {
   font-size: 30px;
   text-shadow: 0 10px 10px #00aced;
+  transition: transform 0.5s;
+}
+
+.contact .fa-solid:hover,
+.contact .fa-brands:hover,
+.contact .fa-duotone:hover {
+  transform: scale(1.5) rotate(360deg);
+  text-shadow: 0 10px 10px white;
 }
 
 .fa-facebook {
