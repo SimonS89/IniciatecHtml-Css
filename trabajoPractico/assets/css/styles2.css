@@ -116,10 +116,11 @@ nav .disabled {
   min-height: 40vh;
 }
 
-strong i {
+strong {
   color: #f8e12e;
   font-weight: bolder;
   font-size: 1.1rem;
+  font-style: italic;
 }
 
 .main_index article {
@@ -191,11 +192,6 @@ h3 {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-mark {
-  background-color: #f8e12e;
-  color: black !important;
 }
 
 /* Footer */
