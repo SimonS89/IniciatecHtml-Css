@@ -47,8 +47,8 @@ h1 {
   gap: 10px;
   /* */
   position: absolute;
-  top: 20px;
-  right: 150px;
+  top: 3vh;
+  right: 15vw;
   z-index: 1;
 }
 
@@ -138,9 +138,9 @@ strong i {
   height: 36vh;
   width: auto;
   object-fit: cover;
-  position: relative;
-  right: 700px;
-  top: 200px;
+  position: absolute;
+  right: 75vw;
+  top: 55vh;
 }
 
 p {
