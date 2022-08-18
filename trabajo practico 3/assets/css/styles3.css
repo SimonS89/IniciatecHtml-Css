@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.img_tres {
+  width: 100%;
+  height: 100%;
+  height: 44vh;
+  object-fit: cover;
+  /* */
+  z-index: -1;
+  position: relative;
+}
+
+h1 {
+  visibility: hidden;
+  position: relative;
+}
+h1:after {
+  font-size: 3rem;
+  color: #f8e12e;
+  background: #001647;
+  display: inline;
+  border: 3px solid #211915;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "MDHL";
+  padding-right: 20px;
+  padding-left: 20px;
+  text-shadow: -1px 1px 0 #211915, 1px 1px 0 #211915, 1px -1px 0 #211915,
+    -1px -1px 0 #211915;
+}
+
+.header {
+  background-color: #7eb4e2;
+  background-image: url(../img/hockey3.jpg);
+  background-repeat: no-repeat;
+  height: 38vh;
+  background-size: cover;
+  background-position: 50% 65%;
+}
+
+/* free */
+
+.container_secundario {
+  background-color: #001647;
+  display: flex;
+  height: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo_secundario {
+  text-align: center;
+  color: #f8e12e;
+  font-size: 3em;
+  width: 70%;
+  text-shadow: -1px 1px 0 #211915, 1px 1px 0 #211915, 1px -1px 0 #211915,
+    -1px -1px 0 #211915;
+}
+
+.logo_uno {
+  height: 4rem;
+  width: auto;
+  transform: scale(3);
+  transition: all 0.5s ease;
+}
+
+.logo_uno:hover {
+  transform: rotate(360deg);
+}
+
+/* main */
+
+.main_index {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+  border: 3px solid #5fa199;
+  padding: 30px;
+  background-color: #001647;
+  color: white;
+  min-height: 38vh;
+}
+
+.main_index nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-width: 15vw;
+  max-height: 30vh;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.main_index article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  width: 70%;
+  min-height: 30vh;
+}
+
+.contact {
+  align-items: center;
+}
+
+section {
+  border: 2px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+section:hover {
+  transform: scale(1.1);
+  border: 2px solid #f8e12e;
+  background-color: #3b5998;
+}
+
+nav .disabled {
+  background-color: #211915 !important;
+  pointer-events: none;
+  color: red;
+  opacity: 0.5;
+}
+
+p {
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+h3 {
+  display: inline;
+}
+
+.ul_contact {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+  flex-wrap: wrap;
+}
+
+strong {
+  color: white;
+  font-style: italic;
+}
+
+.fa-solid,
+.fa-brands,
+.fa-duotone {
+  font-size: 30px;
+  text-shadow: 0 10px 10px #00aced;
+  transition: transform 0.5s;
+}
+
+.contact .fa-solid:hover,
+.contact .fa-brands:hover,
+.contact .fa-duotone:hover {
+  transform: scale(1.5) rotate(360deg);
+  text-shadow: 0 10px 10px white;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-twitter {
+  color: #00aced;
+}
+
+.fa-house {
+  color: #dd4b39;
+}
+
+.fa-instagram {
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #001647;
+  color: #f8e12e;
+  height: 6vh;
+}
+
+.contact_footer {
+  padding: 25px;
+}
+
+.home_footer {
+  padding: 25px;
+}
+
+.nav_dos,
+.logo_dos {
+  display: none !important;
+}
+
+/* Botones */
+
+nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  width: 320px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #494949;
+  background: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease-in-out;
+}
+
+nav a:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #fff700,
+    #ff7000,
+    #ff00fe,
+    #3ff4eb,
+    #9e00ff,
+    #00beff,
+    #ff00dd,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+nav a:active {
+  color: #000;
+}
+
+nav a:active:after {
+  background: transparent;
+}
+
+nav a:hover {
+  transform: scale(1.05);
+}
+
+nav a:hover:before {
+  opacity: 1;
+}
+
+nav a:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
