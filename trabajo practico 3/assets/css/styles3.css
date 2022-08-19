@@ -39,9 +39,10 @@ h1 {
 .container_secundario {
   background-color: #001647;
   display: flex;
-  height: 8vh;
+  min-height: 8vh;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .titulo_secundario {
@@ -66,7 +67,7 @@ h1 {
 
 /* main */
 
-.main_index {
+main {
   margin: 15px;
   display: flex;
   flex-direction: column;
@@ -78,29 +79,32 @@ h1 {
   background-color: #001647;
   color: white;
   min-height: 38vh;
+  flex-wrap: wrap;
 }
 
-.main_index nav {
+main nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   min-width: 15vw;
-  max-height: 30vh;
+  max-height: 42vh;
   gap: 10px;
   flex-wrap: wrap;
   max-width: 100%;
 }
 
-.main_index article {
+main article {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 10px;
-  max-width: 60%;
+  gap: 1.5rem;
+  max-width: 70%;
   min-height: 30vh;
+  margin-top: 5vh;
 }
 
-section {
+section,
+dl {
   border: 2px solid white;
   padding: 1rem;
   text-align: center;
@@ -113,6 +117,21 @@ section:hover {
   transform: scale(1.1);
   border: 2px solid #f8e12e;
   background-color: #3b5998;
+}
+
+dl {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  text-align: center;
+  background-color: #fff;
+  color: #001647;
+}
+
+dt {
+  font-weight: bolder;
 }
 
 .container__main {
@@ -133,18 +152,20 @@ h3 {
 }
 
 main img {
-  height: 30vh;
-  width: auto;
-  object-fit: contain;
+  height: auto;
+  max-width: 35vw;
+  object-fit: cover;
 }
 
 /* Rules */
+
 ol,
-ul {
+ul,
+dl {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style-position: inside;
 }
 
@@ -173,9 +194,9 @@ strong {
 .fa-solid,
 .fa-brands,
 .fa-duotone {
-  font-size: 30px;
+  font-size: 2rem;
   text-shadow: 0 10px 10px #00aced;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease-in-out;
 }
 
 .contact .fa-solid:hover,
