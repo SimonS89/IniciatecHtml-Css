@@ -159,6 +159,23 @@ td {
   background-color: #3b5998;
 }
 
+.section_games {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section_games a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact_games {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 /* Rules */
 
 dl {
@@ -183,7 +200,7 @@ dl > dd > ol {
 
 dd ol {
   gap: 0.2rem;
-  list-style-type: upper-alpha;
+  list-style-type: lower-alpha;
 }
 
 ol,
@@ -194,6 +211,10 @@ dl {
   justify-content: space-between;
   gap: 1.5rem;
   list-style-position: inside;
+}
+
+ul {
+  list-style-type: circle;
 }
 
 /* Contact */
