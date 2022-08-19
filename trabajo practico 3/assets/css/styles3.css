@@ -119,6 +119,47 @@ section:hover {
   background-color: #3b5998;
 }
 
+.container__main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+p {
+  font-weight: bold;
+}
+
+h3 {
+  display: inline;
+}
+
+main img {
+  height: auto;
+  max-width: 35vw;
+  object-fit: cover;
+}
+
+/* Schedule */
+
+table {
+  overflow-x: auto;
+  min-width: 60vw;
+}
+
+th,
+td {
+  padding: 8px;
+}
+
+.tr_distinct {
+  background-color: #3b5998;
+}
+
+/* Rules */
+
 dl {
   padding: 1rem;
   display: flex;
@@ -143,31 +184,6 @@ dd ol {
   gap: 0.2rem;
   list-style-type: upper-alpha;
 }
-
-.container__main {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-p {
-  font-weight: bold;
-}
-
-h3 {
-  display: inline;
-}
-
-main img {
-  height: auto;
-  max-width: 35vw;
-  object-fit: cover;
-}
-
-/* Rules */
 
 ol,
 ul,
