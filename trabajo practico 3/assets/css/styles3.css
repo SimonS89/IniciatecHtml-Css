@@ -18,7 +18,7 @@ header {
   background-color: #7eb4e2;
   background-image: url(../img/hockey3.jpg);
   background-repeat: no-repeat;
-  height: 38vh;
+  height: 39vh;
   background-size: cover;
   background-position: 50% 65%;
 }
@@ -124,14 +124,24 @@ dl {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap: 10px;
-  text-align: center;
+  align-items: flex-start;
+  text-align: start;
   background-color: #fff;
   color: #001647;
 }
 
 dt {
   font-weight: bolder;
+}
+
+dl > dd > ol {
+  list-style-type: decimal;
+  gap: 2rem;
+}
+
+dd ol {
+  gap: 0.2rem;
+  list-style-type: upper-alpha;
 }
 
 .container__main {
