@@ -113,7 +113,7 @@ dl {
   gap: 1rem;
 }
 
-section:hover {
+.section_hover:hover {
   transform: scale(1.1);
   border: 2px solid #f8e12e;
   background-color: #3b5998;
@@ -147,6 +147,7 @@ main img {
 table {
   overflow-x: auto;
   min-width: 60vw;
+  font-size: 1rem;
 }
 
 th,
