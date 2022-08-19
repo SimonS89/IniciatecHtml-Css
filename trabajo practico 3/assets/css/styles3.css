@@ -105,6 +105,7 @@ main article {
 
 section,
 dl {
+  overflow-x: auto;
   border: 2px solid white;
   padding: 1rem;
   text-align: center;
@@ -145,7 +146,6 @@ main img {
 /* Schedule */
 
 table {
-  overflow-x: auto;
   min-width: 60vw;
   font-size: 1rem;
 }
