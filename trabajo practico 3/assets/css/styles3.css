@@ -323,6 +323,7 @@ footer {
   color: #000;
   background: #fff;
   border-radius: 100px;
+  white-space: nowrap;
 }
 
 nav a {
