@@ -257,6 +257,7 @@ ul {
   background-color: #fff;
   color: #001647;
   font-weight: bolder;
+  min-width: 60vw;
 }
 
 form {
@@ -266,7 +267,7 @@ form {
   justify-content: start;
   border: 1px solid black;
   min-height: 50vh;
-  max-width: 70vw;
+  max-width: 60vw;
   gap: 1rem;
   font-size: 1rem;
   flex-wrap: wrap;
