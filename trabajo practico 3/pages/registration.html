@@ -95,18 +95,19 @@
                         </fieldset>
                         <fieldset>
                               <legend>
-                                    What position(s) do you normally play? (check all that apply) <label
-                                          for="forward">Forward
-                                          <input type="checkbox" value="forward" id="forward">
+                                    What position(s) do you normally play? (check all that apply) <label for="forward">
+                                          <input name="position" type="checkbox" value="forward" id="forward">
+                                          Forward
                                     </label>
-                                    <label for="defense">Defense
-                                          <input type="checkbox" value="defense" id="defense">
+                                    <label for="defense">
+                                          <input type="checkbox" value="defense" id="defense" name="position">Defense
                                     </label>
-                                    <label for="midfield">Midfield
-                                          <input type="checkbox" value="midfield" id="midfield">
+                                    <label for="midfield">
+                                          <input type="checkbox" value="midfield" id="midfield" name="position">Midfield
                                     </label>
-                                    <label for="goalkeeper">Goalkeeper
-                                          <input type="checkbox" value="goalkeeper" id="goalkeeper">
+                                    <label for="goalkeeper">
+                                          <input type="checkbox" value="goalkeeper" id="goalkeeper"
+                                                name="position">Goalkeeper
                                     </label>
                               </legend>
 
@@ -149,7 +150,12 @@
                                     the cancellation policy and agree to its terms.</p>
                               <label for="signature">Accept terms and conditiones <input type="checkbox" id="signature"
                                           name="signature" required></label>
-                              <label for="today">Date:<input type="date" id="today" name="date" required></label>
+                              <label for="today">Date:<input type="date" id="today" name="signature_date"
+                                          required></label>
+                              <label for="parent_guardian">Parent/Guardian's Full Name :
+                                    <input type="text" id="parent_guardian" name="parent_guardian"
+                                          placeholder="John Connor" required>
+                              </label>
                         </fieldset>
                         <input type="submit">
                   </form>
