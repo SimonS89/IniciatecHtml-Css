@@ -16,7 +16,7 @@
       </header>
 
       <div class="container_secundario">
-            <h2 class="titulo_secundario">About MDHL</h2>
+            <h2 class="titulo_secundario">Player Registration Form</h2>
             <a href="../index.html"> <img class="logo_uno" src="../assets/img/Logo.png"
                         alt="Logo Mighty Ducks Hockey League"></a>
       </div>
@@ -30,35 +30,131 @@
                   <a href="../pages/contact.html">Contact</a>
                   <a href="../pages/registration.html" class="disabled">Registration</a>
             </nav>
-            <article>
-                  <section class="section_hover">
+            <div class="article_form">
+                  <form action="./../show_data.html">
+                        <fieldset>
+                              <legend>Personal Player's Data</legend>
 
-                        <h3><i class="fa-solid fa-list-check"></i><i> Mission</i></h3>
-                        <p>To support young athletes living in Chicago's northside neighborhoods, who have an interest
-                              in
-                              learning and playing hockey, with opportunities to learn and practice skills related to
-                              the game of
-                              hockey, specifically those skills around teamcooperation and good sportsmanship.</p>
-                  </section>
-                  <section class="section_hover">
+                              <label for="first_name">First Name :
+                                    <input type="text" id="first_name" name="first_name" placeholder="John" required>
+                              </label>
+                              <label for="last_name">Last Name :
+                                    <input type="text" id="last_name" name="last_name" placeholder="Connor" required>
+                              </label>
+                              <fieldset>
+                                    <label for="street_address">Street Address :
+                                          <input type="text" id="street_address" name="street_address"
+                                                placeholder="P. Sherman,Wallaby 42nd" required>
+                                    </label>
+                                    <label for="city">City :
+                                          <input type="text" name="city" id="city" placeholder="Sidney" required>
+                                    </label>
+                                    <label for="zip_code">Zip Code : <input type="text" id="zip_code" name="zip_code"
+                                                placeholder="2000" required></label>
+                              </fieldset>
+                              <fieldset>
+                                    <label for="birth_date">Birth Date(dd/mm/yyyy) : <input type="date" id="birth_date"
+                                                name="birth_date" min="2008-01-01" max="2018-12-30" required></label>
+                              </fieldset>
+                              <fieldset title="Gender :">
+                                    <legend>Gender : <label for="male">Male: <input type="radio" id="male" name="gender"
+                                                      value="m" required></label>
+                                          <label for="female">Female:
+                                                <input type="radio" id="female" name="gender" value="f"></label>
+                                          <label for="x">X:
+                                                <input type="radio" id="x" name="gender" value="x">
+                                          </label>
+                                    </legend>
+                              </fieldset>
+                              <fieldset>
+                                    <legend>Grade: <select name="grade" required>
+                                                <option value="" selected disabled hidden>Choose Grade</option>
+                                                <option value="pre-school">Pre-School</option>
+                                                <option value="1st">1st</option>
+                                                <option value="2nd">2nd</option>
+                                                <option value="3rd">3rd</option>
+                                                <option value="4th">4th</option>
+                                                <option value="5th">5th</option>
+                                          </select></legend>
 
-                        <h3><i class="fa-solid fa-eye-low-vision"></i><i> Vision</i></h3>
-                        <p>The Mighty Ducks Hockey League aspires to develop strong, well·rounded, and mindful
-                              athletes through the building of character, self-discipline, and leadership.</p>
-                  </section>
-                  <section class="section_hover">
+                              </fieldset>
+                        </fieldset>
+                        <fieldset>
+                              <legend>
+                                    Which elementary school do you live near? <select name="closest_school" required>
+                                          <option value="" selected disabled hidden>Choose School</option>
+                                          <option value="aj katzenmaier">AJ Katzenmaier</option>
+                                          <option value="greenbay">Greenbay</option>
+                                          <option value="howard_yeager">Howard A. Yeager</option>
+                                          <option value="marjorie_hart">Marjorie P. Hart</option>
+                                          <option value="north">North Elementary</option>
+                                          <option value="south">South Elementary</option>
+                                    </select>
+                              </legend>
 
-                        <h3><i class="fa-solid fa-circle-info"></i><i> General Information</i></h3>
-                        <p>The Mighty Ducks Hockey League was established in 1996 to provide athletes residing in
-                              Chicago's northside neighborhoods an environment in which to learn and play hockey. To be
-                              a
-                              member of MDHL, you must be between the ages of 4 -12 and reside in a Chicago northside
-                              neighborhood. MDHL is ran by a small full·time staff, and relies on the generous volunteer
-                              time of
-                              parents and previous league members.</p>
-                  </section>
-            </article>
-            <img src="../assets/img/hockey  2.jpg" alt="niño jugando al hockey con su stick">
+                        </fieldset>
+                        <fieldset>
+                              <legend>
+                                    What position(s) do you normally play? (check all that apply) <label
+                                          for="forward">Forward
+                                          <input type="checkbox" value="forward" id="forward">
+                                    </label>
+                                    <label for="defense">Defense
+                                          <input type="checkbox" value="defense" id="defense">
+                                    </label>
+                                    <label for="midfield">Midfield
+                                          <input type="checkbox" value="midfield" id="midfield">
+                                    </label>
+                                    <label for="goalkeeper">Goalkeeper
+                                          <input type="checkbox" value="goalkeeper" id="goalkeeper">
+                                    </label>
+                              </legend>
+
+                        </fieldset>
+                        <fieldset>
+                              <legend>Uniform Size: <select name="uniform_size" required>
+                                          <option value="" selected disabled hidden>Choose Size</option>
+                                          <option value="youth_small">Youth Small</option>
+                                          <option value="youth_medium">Youth Medium</option>
+                                          <option value="youth_large">Youth Large</option>
+                                          <option value="small">Small</option>
+                                          <option value="medium">Medium</option>
+                                          <option value="large">Large</option>
+                                          <option value="extra_large">Extra-Large</option>
+                                    </select></legend>
+
+                        </fieldset>
+                        <fieldset>
+                              <legend>Permission to Play</legend>
+
+                              <p>I, the parent or guardian of the minor registrant, agree that the registrant and I will
+                                    abide
+                                    by all the rules of the
+                                    Mighty Ducks Hockey League (MDHL). In recognizing the possibility of physical injury
+                                    associated with hockey and in
+                                    consideration for the "League" accepting the registrant for its hockey programs and
+                                    activities, I hereby release,
+                                    discharge, and/or otherwise indemnify MDHL, their employees and associated personnel
+                                    and
+                                    volunteers, including the
+                                    facilities used for practices and games, against any claim by or on behalf of the
+                                    registrant as a result of the
+                                    registrant's participation in the programand/orbeing transported to or from MDHL
+                                    sponsored
+                                    activities, which
+                                    transportation.
+                                    By signing below, I herebyagree andauthorizethe above.In addition, by signing below,
+                                    l
+                                    also acknowledge that I have read
+                                    the cancellation policy and agree to its terms.</p>
+                              <label for="signature">Accept terms and conditiones <input type="checkbox" id="signature"
+                                          name="signature" required></label>
+                              <label for="today">Date:<input type="date" id="today" name="date" required></label>
+                        </fieldset>
+                        <input type="submit">
+                  </form>
+            </div>
+            <img src="../assets/img/hockey_2.jpg" alt="niño jugando al hockey con su stick">
       </main>
       <footer>
             <h5>
