@@ -326,6 +326,12 @@ input[type="submit"] {
   align-self: center;
 }
 
+input[type="text"],
+input[type="date"],
+select {
+  background-color: #ececec;
+}
+
 fieldset > p {
   padding: 0 1rem 0 1rem;
 }
