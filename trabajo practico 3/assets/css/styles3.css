@@ -18,7 +18,7 @@ header {
   background-color: #7eb4e2;
   background-image: url(../img/hockey3.jpg);
   background-repeat: no-repeat;
-  height: 39vh;
+  height: 50vh;
   background-size: cover;
   background-position: 50% 65%;
 }
@@ -44,6 +44,7 @@ h1 {
   text-shadow: -1px 1px 0 #211915, 1px 1px 0 #211915, 1px -1px 0 #211915,
     -1px -1px 0 #211915;
   position: absolute;
+  opacity: 0.8;
 }
 
 /* container secundario */
@@ -513,6 +514,26 @@ nav a:after {
 @media only screen and (max-width: 768px) {
   .logo_uno {
     display: none;
+  }
+
+  h1 {
+    visibility: hidden;
+  }
+
+  h1:after {
+    opacity: 0.8;
+    visibility: visible;
+    content: "MDHL";
+    position: absolute;
+    top: 0;
+    font-size: 2.5rem;
+    color: #f8e12e;
+    background: #001647;
+    display: block;
+    border: 3px solid #211915;
+    padding: 0.4rem;
+    text-shadow: -1px 1px 0 #211915, 1px 1px 0 #211915, 1px -1px 0 #211915,
+      -1px -1px 0 #211915;
   }
 
   .section_maps {
