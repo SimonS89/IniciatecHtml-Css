@@ -593,4 +593,8 @@ nav a:after {
     align-items: center;
     height: 10vh;
   }
+
+  footer > h4 {
+    font-size: 0.8rem;
+  }
 }
