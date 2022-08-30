@@ -180,7 +180,7 @@ td > a {
 
 th,
 td {
-  padding: 8px;
+  padding: 0.5rem;
 }
 
 .tr_distinct {
@@ -596,5 +596,15 @@ nav a:after {
 
   footer > h4 {
     font-size: 0.8rem;
+  }
+
+  table {
+    min-width: 80vw;
+    font-size: 0.8rem;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
   }
 }
