@@ -1,0 +1,50 @@
+a {
+  color: white;
+  position: relative;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  text-decoration: none;
+}
+
+p a:hover,
+ul li a:hover {
+  visibility: visible;
+  transform: scaleX(1);
+  background-color: #d90368;
+  color: black !important;
+}
+
+nav ul li a:active {
+  border: 1px solid;
+  box-shadow: 3px 3px 2px black;
+}
+
+#main .carousel-inner,
+#main .carousel-inner img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  z-index: 1;
+}
+
+#carousel .overlay .container {
+  height: 100%;
+}
+
+#carousel .overlay .row {
+  height: 100%;
+}
