@@ -39,8 +39,15 @@ h2 {
   object-fit: cover;
 }
 
+.col-md-8 > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
 #main .carousel-inner,
-#main .carousel-inner video {
+#main .carousel-inner video,
+#main .carousel-inner img {
   height: 50vh;
   width: 100%;
   object-fit: cover;
