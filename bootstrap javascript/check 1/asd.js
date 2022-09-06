@@ -196,9 +196,9 @@
 
 // CONDICIONALES
 
-let num1 = 13;
-let num2 = 12;
-let num3 = 11;
+// let num1 = 13;
+// let num2 = 12;
+// let num3 = 11;
 // if (num1 > num2) {
 //   console.log(num1 + " es mayor a " + num2);
 // } else {
@@ -268,4 +268,170 @@ let num3 = 11;
 //   console.log("puede conducir");
 // } else {
 //   console.log("no esta habilitado a conducir");
+// }
+
+// let nombre = prompt("ingrese su nombre");
+// let pase = prompt("Ingrese el tipo de pase : vip/normal");
+// let entrada = prompt("posee entrada ? s/n");
+
+// if (nombre == "simon" || pase == "vip") {
+//   alert("Bienvenido " + nombre);
+// } else if (entrada == "s" && confirm("desea utilizarla?")) {
+//   alert("Bienvenido " + nombre);
+// } else if (
+//   confirm("desea comprar entrada?") &&
+//   confirm("el costo es de $1000, desea abonarlo?")
+// ) {
+//   alert("Bienvenido " + nombre);
+// } else {
+//   alert("Lo sentimos, vuelva pronto");
+// }
+
+// let numeroIncognita = 5;
+// let numeroIngresado = prompt("1er intento: ingrese un numero ");
+
+// if (numeroIncognita == numeroIngresado) {
+//   alert("Ganaste, haz adivinado el numero.");
+// } else if (numeroIncognita > numeroIngresado) {
+//   alert("el numero incognita es mayor al ingresado, intentelo nuevamente");
+//   numeroIngresado = prompt("2do intento: ingrese un numero");
+// } else if (numeroIncognita < numeroIngresado) {
+//   alert("el numero incognita es menor al ingresado, intentelo nuevamente");
+//   numeroIngresado = prompt("2do intento: ingrese un numero");
+// }
+// if (numeroIncognita == numeroIngresado) {
+//   alert("Ganaste, haz adivinado el numero.");
+// } else if (numeroIncognita > numeroIngresado) {
+//   alert("el numero incognita es mayor al ingresado, intentelo nuevamente");
+//   numeroIngresado = prompt("3er intento: ingrese un numero");
+// } else if (numeroIncognita < numeroIngresado) {
+//   alert("el numero incognita es menor al ingresado, intentelo nuevamente");
+//   numeroIngresado = prompt("3er intento: ingrese un numero");
+// }
+// if (numeroIncognita == numeroIngresado) {
+//   alert("Ganaste, haz adivinado el numero.");
+// } else {
+//   alert("lo sentimos, no hay mas intentos.");
+// }
+
+// let edad = parseInt(prompt("Ingrese su edad"));
+
+// if (edad > 0 && edad <= 12) {
+//   alert("Eres un infante");
+// } else if (edad >= 13 && edad <= 18) {
+//   alert("Eres un adolescente");
+// } else if (edad >= 19 && edad <= 45) {
+//   alert("Eres un adulto joven");
+// } else if (edad > 45 && edad <= 100) {
+//   alert("Eres un anciano");
+// } else {
+//   alert("En realidad tienes esa edad?");
+// }
+
+// alert("Bienvenido a nuestro piedra papel o tijera");
+// let jugador1 = prompt("Jugador 1 elija una opcion : PIEDRA / PAPEL / TIJERAS");
+// let jugador2 = prompt("Jugador 2 elija una opcion : PIEDRA / PAPEL / TIJERAS");
+
+// if (
+//   (jugador1 != "PIEDRA" && jugador1 != "PAPEL" && jugador1 != "TIJERAS") ||
+//   (jugador2 != "PIEDRA" && jugador2 != "PAPEL" && jugador2 != "TIJERAS")
+// ) {
+//   alert("Uno de los jugadores hizo trampa");
+// } else if (
+//   (jugador1 == "PIEDRA" && jugador2 == "TIJERAS") ||
+//   (jugador1 == "PAPEL" && jugador2 == "PIEDRA") ||
+//   (jugador1 == "TIJERAS" && jugador2 == "PAPEL")
+// ) {
+//   alert("Gano el jugador1!");
+// } else if (
+//   (jugador2 == "PIEDRA" && jugador1 == "TIJERAS") ||
+//   (jugador2 == "PAPEL" && jugador1 == "PIEDRA") ||
+//   (jugador2 == "TIJERAS" && jugador1 == "PAPEL")
+// ) {
+//   alert("Gano el jugador2!");
+// } else {
+//   alert("Empate!");
+// }
+
+// switch (prompt("Ingrese un color , eg: Blanco")) {
+//   case "Blanco":
+//   case "Negro":
+//     alert("Falta de color");
+//     break;
+//   case "Verde":
+//     alert("El color de la naturaleza");
+//     break;
+//   case "Azul":
+//     alert("El color del agua");
+//     break;
+//   case "Amarillo":
+//     alert("El color del sol");
+//     break;
+//   case "Rojo":
+//     alert("El color del fuego");
+//     break;
+//   case "Marron":
+//     alert("El color de la tierra");
+//     break;
+//   default:
+//     alert("Excelente eleccion, no lo teniamos pensado");
+//     break;
+// }
+
+// let num1 = parseInt(prompt("Ingrese un numero"));
+// let num2 = parseInt(prompt("Ingrese otro numero"));
+// let operacion = prompt(
+//   "ingrese una operacion , eg: suma / resta / division / multiplicacion"
+// );
+
+// if (num2 == 0 && operacion == "division") {
+//   alert("Error , no se puede dividir por 0");
+// } else {
+//   switch (operacion) {
+//     case "suma":
+//       alert(num1 + num2);
+//       break;
+//     case "resta":
+//       alert(num1 - num2);
+//       break;
+//     case "multiplicacion":
+//       alert(num1 * num2);
+//       break;
+//     case "division":
+//       alert(num1 / num2);
+//       break;
+//     default:
+//       alert("operacion incorrecta");
+//       break;
+//   }
+// }
+
+// let nombre = prompt("ingrese su nombre");
+// let apellido = prompt("ingrese su apellido");
+// let fechaNacimiento = prompt("ingrese su fecha de nacimiento");
+// let dni = prompt("ingrese su dni");
+
+// let correcto = confirm(
+//   "Click en aceptar si es correcto \n" +
+//     "nombre: " +
+//     nombre +
+//     "\napellido: " +
+//     apellido +
+//     "\nfecha de nacimiento: " +
+//     fechaNacimiento +
+//     "\ndni: " +
+//     dni
+// );
+
+// if (correcto) {
+//   let dniPersona = {
+//     nombre,
+//     apellido,
+//     fechaNacimiento,
+//     dni,
+//   };
+//   console.table(dniPersona);
+//   console.log("Registro exitoso");
+// } else {
+//   console.log("Vuelva a intentarlo en 1 mes");
 // }
