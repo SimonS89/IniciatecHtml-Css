@@ -1,3 +1,5 @@
+//VARIABLES, TIPOS DE DATOS, OPERADORES
+
 // const colorPelo = "marron";
 // let edad = 34;
 // let estadoCivil = "soltero";
@@ -190,3 +192,80 @@
 // let saldo = prompt("ingrese su saldo actual");
 // let puedePasar = pase === "VIP" || saldo > 1000;
 // console.log("La persona puede pasar : " + puedePasar);
+/* */
+
+// CONDICIONALES
+
+let num1 = 13;
+let num2 = 12;
+let num3 = 11;
+// if (num1 > num2) {
+//   console.log(num1 + " es mayor a " + num2);
+// } else {
+//   console.log("el segundo numero es mayor");
+// }
+
+// if (num1 == num2) {
+//   console.log("son iguales");
+// } else {
+//   console.log("son distintos");
+// }
+
+// if (num1 == num2) {
+//   console.log("son iguales");
+// } else if (num1 > num2) {
+//   console.log(num1 + " es mayor");
+// } else {
+//   console.log(num2 + " es mayor");
+// }
+
+// if (num1 < num2 && num1 < num3) {
+//   console.log(num1);
+// } else if (num2 < num1 && num2 < num3) {
+//   console.log(num2);
+// } else {
+//   console.log(num3);
+// }
+
+// let persona1 = {
+//   nombre: "simon",
+//   edad: 28,
+//   altura: 1.76,
+// };
+
+// let persona2 = {
+//   nombre: "vicente",
+//   edad: 30,
+//   altura: 1.77,
+// };
+
+// if (persona1.edad == persona2.edad) {
+//   console.log("tienen la misma edad");
+// } else if (persona1.edad > persona2.edad) {
+//   console.log(persona1.nombre + " es mayor.");
+// } else {
+//   console.log(persona2.nombre + " es mayor");
+// }
+
+// if (persona1.altura == persona2.altura) {
+//   console.log("tienen la misma altura");
+// } else if (persona1.altura > persona2.altura) {
+//   console.log(persona1.nombre + " es mas alto.");
+// } else {
+//   console.log(persona2.nombre + " es mas alto");
+// }
+
+// let nombre;
+
+// let persona1 = {
+//   nombre: prompt("ingrese su nombre"),
+//   edad: parseInt(prompt("ingrese su edad")),
+//   altura: parseInt(prompt("ingrese su altura")),
+//   vision: prompt("ingrese su nivel de vision"),
+// };
+
+// if (persona1.edad > 18 && persona1.altura > 150 && persona1.vision >= 8) {
+//   console.log("puede conducir");
+// } else {
+//   console.log("no esta habilitado a conducir");
+// }
