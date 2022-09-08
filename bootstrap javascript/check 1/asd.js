@@ -460,26 +460,25 @@
 
 // console.log(acumulador);
 
-// let numeroIncognita = Math.ceil(Math.random() * 100);
-// alert(numeroIncognita);
-// let intentos = 1;
-// let numeroElegido = parseInt(prompt("Ingrese un numero"));
+let numeroIncognita = Math.ceil(Math.random() * 100);
+alert(numeroIncognita);
+let intentos = 1;
+let numeroElegido = parseInt(prompt("Ingrese un numero"));
 
-// while (numeroElegido != numeroIncognita) {
-//   if (numeroElegido > numeroIncognita) {
-//     alert("El numero que elegiste es mayor al numero incognita");
-//     numeroElegido = parseInt(prompt("Ingrese otro numero"));
-//     intentos++;
-//   } else if (numeroElegido < numeroIncognita) {
-//     alert("El numero que elegiste es menor al numero incognita");
-//     numeroElegido = parseInt(prompt("Ingrese otro numero"));
-//     intentos++;
-//   }
-// }
-
-// if (numeroElegido == numeroIncognita) {
-//   alert(`Felicidades! has acertado tras ${intentos} intento/s`);
-// }
+while (numeroElegido != numeroIncognita) {
+  if (numeroElegido > numeroIncognita) {
+    alert("El numero que elegiste es mayor al numero incognita");
+    numeroElegido = parseInt(prompt("Ingrese otro numero"));
+    intentos++;
+  } else if (numeroElegido < numeroIncognita) {
+    alert("El numero que elegiste es menor al numero incognita");
+    numeroElegido = parseInt(prompt("Ingrese otro numero"));
+    intentos++;
+  }
+  if (numeroElegido == numeroIncognita) {
+    alert(`Felicidades! has acertado tras ${intentos} intento/s`);
+  }
+}
 
 // let numero = parseInt(prompt("ingrese un numero"));
 // let acumulador = 0;
