@@ -435,3 +435,248 @@
 // } else {
 //   console.log("Vuelva a intentarlo en 1 mes");
 // }
+
+// BUCLES
+
+// let numero = parseInt(prompt("Ingrese un numero"));
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(`${numero} * ${i} = ${numero * i}`);
+// }
+
+// let acumulador = 0;
+// let numeroIngresado;
+// let numeroIngresado = parseInt(prompt("ingrese un numero"));
+
+// while (numeroIngresado != 0) {
+//   acumulador += numeroIngresado;
+//   numeroIngresado = parseInt(prompt("ingrese un numero"));
+// }
+
+// do {
+//   numeroIngresado = parseInt(prompt("ingrese un numero"));
+//   acumulador += numeroIngresado;
+// } while (numeroIngresado != 0);
+
+// console.log(acumulador);
+
+// let numeroIncognita = Math.ceil(Math.random() * 100);
+// alert(numeroIncognita);
+// let intentos = 1;
+// let numeroElegido = parseInt(prompt("Ingrese un numero"));
+
+// while (numeroElegido != numeroIncognita) {
+//   if (numeroElegido > numeroIncognita) {
+//     alert("El numero que elegiste es mayor al numero incognita");
+//     numeroElegido = parseInt(prompt("Ingrese otro numero"));
+//     intentos++;
+//   } else if (numeroElegido < numeroIncognita) {
+//     alert("El numero que elegiste es menor al numero incognita");
+//     numeroElegido = parseInt(prompt("Ingrese otro numero"));
+//     intentos++;
+//   }
+// }
+
+// if (numeroElegido == numeroIncognita) {
+//   alert(`Felicidades! has acertado tras ${intentos} intento/s`);
+// }
+
+// let numero = parseInt(prompt("ingrese un numero"));
+// let acumulador = 0;
+
+// for (let i = 1; i < numero / 2; i++) {
+//   if (numero % i == 0) {
+//     acumulador += 1;
+//   }
+// }
+
+// if (acumulador > 1) {
+//   alert(`${numero} no es primo.`);
+// } else {
+//   alert(`${numero} es primo.`);
+// }
+
+// let numero = parseInt(prompt("ingrese un numero"));
+// let divisores = "";
+
+// for (let i = 1; i <= numero / 2; i++) {
+//   if (numero % i == 0) {
+//     divisores += i + ", ";
+//   }
+// }
+
+// alert(`los divisores de ${numero} son ${divisores}`);
+
+// let frutas = [
+//   "pera",
+//   "manzana",
+//   "banana",
+//   "naranja",
+//   "uva",
+//   "mandarina",
+//   "kiwi",
+//   "frutilla",
+//   "limon",
+//   "durazno",
+// ];
+
+// for (const fruta of frutas) {
+//   console.log(fruta);
+// }
+
+// let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// for (const numero of numeros) {
+//   console.log(numero * 2);
+// }
+
+// let familia = [
+//   {
+//     parentezco: "mama",
+//     nombre: "beatriz",
+//     edad: 70,
+//     viaja: true,
+//   },
+//   {
+//     parentezco: "papa",
+//     nombre: "hugo",
+//     edad: 72,
+//     viaja: false,
+//   },
+//   {
+//     parentezco: ", o sea yo",
+//     nombre: "simon",
+//     edad: 34,
+//     viaja: true,
+//   },
+//   {
+//     parentezco: "hermano menor",
+//     nombre: "vicente",
+//     edad: 30,
+//     viaja: true,
+//   },
+//   {
+//     parentezco: "mascota",
+//     nombre: "albahaca",
+//     edad: 2,
+//     viaja: false,
+//   },
+// ];
+
+// for (const persona of familia) {
+//   console.log(
+//     `${persona.nombre} es mi ${persona.parentezco}, tiene ${
+//       persona.edad
+//     } años y ${persona.viaja ? "le gusta viajar." : "no suele viajar."}`
+//   );
+// }
+
+// let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// for (const numero of numeros) {
+//   if (numero % 2 == 0) {
+//     console.log(numero);
+//   }
+// }
+
+// let sumaPares = 0;
+// let sumaImpares = 0;
+// let numero;
+
+// do {
+//   numero = parseInt(prompt("ingrese un numero"));
+//   if (numero % 2 == 0) {
+//     sumaPares += numero;
+//   } else {
+//     sumaImpares += numero;
+//   }
+// } while (numero != 0);
+
+// console.log(
+//   `La suma de los numeros pares es de ${sumaPares} , y la de los impares es de ${sumaImpares}`
+// );
+
+// let numeros = [1, 2, 3, 13, 5, 6, 7, 8, 9, 10];
+// let auxiliar = numeros[7];
+
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] > auxiliar) {
+//     auxiliar = numeros[i];
+//   }
+// }
+// console.log(`El numero mayor es el ${auxiliar}`);
+
+// let numeros = [5, 2, 3, 13, 5, 6, 7, 1, 9, 10];
+// let auxiliar = numeros[0];
+
+// for (let i = 0; i < numeros.length; i++) {
+//   if (numeros[i] < auxiliar) {
+//     auxiliar = numeros[i];
+//   }
+// }
+// console.log(`El numero menor es el ${auxiliar}`);
+
+// let jugadorUno = prompt("ingrese su nombre");
+// let jugadorDos = prompt("ingrese el nombre de su rival");
+// let empate = false;
+
+// do {
+//   let eleccionUno = prompt(
+//     jugadorUno +
+//       " Ingrese una de las siguientes opciones PIEDRA / PAPEL / TIJERA"
+//   );
+//   let eleccionDos = prompt(
+//     jugadorDos +
+//       " Ingrese una de las siguientes opciones PIEDRA / PAPEL / TIJERA"
+//   );
+//   if (
+//     (eleccionUno == "PIEDRA" && eleccionDos == "TIJERA") ||
+//     (eleccionUno == "TIJERA" && eleccionDos == "PAPEL") ||
+//     (eleccionUno == "PAPEL" && eleccionDos == "PIEDRA")
+//   ) {
+//     alert(`${jugadorUno} ha ganado esta mano.`);
+//   } else if (eleccionUno == eleccionDos) {
+//     alert("Empate! Juego terminado.");
+//     empate = true;
+//   } else {
+//     alert(`${jugadorDos} ha ganado esta mano.`);
+//   }
+// } while (!empate);
+
+// let linea = "";
+
+// for (let i = 0; i < 5; i++) {
+//   for (let j = 0; j < i + 1; j++) {
+//     linea += "*";
+//   }
+//   console.log(linea);
+//   linea = "";
+// }
+
+// let linea = "";
+
+// for (let i = 5; i > 0; i--) {
+//   for (let j = 0; j < i; j++) {
+//     linea += "*";
+//   }
+//   console.log(linea);
+//   linea = "";
+// }
+
+// let numeros = [5, 2, 3, 13, 22, 6, 7, 1, 9, 10];
+// let arrayOrdenado = [];
+// let auxiliar = Number.MAX_VALUE;
+// let indiceAuxiliar;
+
+// for (let i = 0; i < 10; i++) {
+//   for (let j = 0; j < numeros.length; j++) {
+//     if (numeros[j] < auxiliar) {
+//       auxiliar = numeros[j];
+//       indiceAuxiliar = j;
+//     }
+//   }
+//   arrayOrdenado.push(auxiliar);
+//   auxiliar = Number.MAX_VALUE;
+//   numeros.splice(indiceAuxiliar, 1);
+// }
+// console.log(arrayOrdenado);
