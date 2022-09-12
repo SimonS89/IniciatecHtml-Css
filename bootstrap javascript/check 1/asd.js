@@ -529,38 +529,38 @@
 //   console.log(numero * 2);
 // }
 
-// let familia = [
-//   {
-//     parentezco: "mama",
-//     nombre: "beatriz",
-//     edad: 70,
-//     viaja: true,
-//   },
-//   {
-//     parentezco: "papa",
-//     nombre: "hugo",
-//     edad: 72,
-//     viaja: false,
-//   },
-//   {
-//     parentezco: ", o sea yo",
-//     nombre: "simon",
-//     edad: 34,
-//     viaja: true,
-//   },
-//   {
-//     parentezco: "hermano menor",
-//     nombre: "vicente",
-//     edad: 30,
-//     viaja: true,
-//   },
-//   {
-//     parentezco: "mascota",
-//     nombre: "albahaca",
-//     edad: 2,
-//     viaja: false,
-//   },
-// ];
+let familia = [
+  {
+    parentezco: "mama",
+    nombre: "beatriz",
+    edad: 70,
+    viaja: true,
+  },
+  {
+    parentezco: "papa",
+    nombre: "hugo",
+    edad: 72,
+    viaja: false,
+  },
+  {
+    parentezco: ", o sea yo",
+    nombre: "simon",
+    edad: 34,
+    viaja: true,
+  },
+  {
+    parentezco: "hermano menor",
+    nombre: "vicente",
+    edad: 30,
+    viaja: true,
+  },
+  {
+    parentezco: "mascota",
+    nombre: "albahaca",
+    edad: 2,
+    viaja: false,
+  },
+];
 
 // for (const persona of familia) {
 //   console.log(
@@ -568,6 +568,12 @@
 //       persona.edad
 //     } años y ${persona.viaja ? "le gusta viajar." : "no suele viajar."}`
 //   );
+// }
+
+// for (const integrante of familia) {
+//   for (const atributo in integrante) {
+//     document.write(`  ${atributo} :${integrante[atributo]} `);
+//   }
 // }
 
 // let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -644,8 +650,8 @@
 
 // let linea = "";
 
-// for (let i = 0; i < 5; i++) {
-//   for (let j = 0; j < i + 1; j++) {
+// for (let i = 1; i <= 5; i++) {
+//   for (let j = 0; j < i; j++) {
 //     linea += "*";
 //   }
 //   console.log(linea);
