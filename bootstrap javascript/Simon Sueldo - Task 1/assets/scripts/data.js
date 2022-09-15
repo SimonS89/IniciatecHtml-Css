@@ -175,22 +175,37 @@ const datos = {
   ],
 };
 
-function renderizar(evento) {
-  return `      
-            <div class="card text-center col-12 col-md-5 col-lg-3  pb-2 text-bg-secondary" >
-                  <div class="inner">
-                                                <img src=${evento.image} class="card-img-top" alt=${evento.name}>
-                                          </div>
-                                          <div class="card-body">
-                                                <h5 class="card-title">${evento.name}</h5>
-                                                <p class="card-text">${evento.description} </p>
-                                        
-                                                <span class="badge text-bg-light p-3 ">Price: $${evento.price}</span>
-                                                <a href="./assets/pages/details.html"
-                                                      class="btn btn-dark fw-bolder pb-2 pt-2">Buy
-                                                      Now</a>
-                                          </div>
-                                    </div>`;
+function renderizar(evento, contenedor) {
+  let card = document.createElement("div");
+  card.classList.add(
+    "card",
+    "text-center",
+    "col-12",
+    "col-md-5",
+    "col-lg-3",
+    "pb-2",
+    "text-bg-secondary"
+  );
+  card.innerHTML = `      
+    <div class="inner">
+        <img src=${evento.image} class="card-img-top" alt=${evento.name}>
+     </div>
+     <div class="card-body d-flex flex-column">
+         <h5 class="card-title">${evento.name}</h5>
+         <p class="card-text">${evento.description} </p>
+         <div class="d-flex justify-content-center gap-2" style="margin-top:auto">
+         <span class="d-flex align-items-center  badge text-bg-light p-3 ">Price: $${
+           evento.price
+         }</span>
+         <a href=${
+           document.getElementById("cards__home") != null
+             ? "./assets/pages/details.html"
+             : "./../pages/details.html"
+         } class="btn btn-dark fw-bolder pb-2 pt-2" >Buy Now
+         </a>
+         </div>
+     </div>`;
+  contenedor.appendChild(card);
 }
 
 export { datos, renderizar };
