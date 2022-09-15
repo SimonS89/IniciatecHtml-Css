@@ -5,8 +5,8 @@ let template = "";
 
 eventos.forEach((evento) => {
   let date = evento.date;
-  let anio = parseInt(date.slice(0, 4));
-  if (anio < 2022) {
+  let anioActual = datos.fechaActual;
+  if (date < anioActual) {
     template += renderizar(evento);
   }
 });

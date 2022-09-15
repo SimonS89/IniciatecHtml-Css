@@ -179,30 +179,13 @@ function renderizar(evento) {
   return `      
             <div class="card text-center col-12 col-md-5 col-lg-3  pb-2 text-bg-secondary" >
                   <div class="inner">
-                                                <img src=${
-                                                  evento.image
-                                                } class="card-img-top" alt=${
-    evento.name
-  }>
+                                                <img src=${evento.image} class="card-img-top" alt=${evento.name}>
                                           </div>
                                           <div class="card-body">
-                                                <h5 class="card-title">${
-                                                  evento.name
-                                                }</h5>
-                                                <p class="card-text">${
-                                                  evento.description
-                                                } We invite you to our fabolous ${
-    evento.category
-  } event , celebrated on ${evento.date} at ${
-    evento.place
-  } stage with a capacity for ${
-    evento.capacity
-  } guests, and we hope we'll have about ${
-    evento.assistance ? evento.assistance : evento.estimate
-  }.  Don't miss this chance!</p>
-                                                <span class="badge text-bg-light p-3 ">Price: $${
-                                                  evento.price
-                                                }</span>
+                                                <h5 class="card-title">${evento.name}</h5>
+                                                <p class="card-text">${evento.description} </p>
+                                        
+                                                <span class="badge text-bg-light p-3 ">Price: $${evento.price}</span>
                                                 <a href="./assets/pages/details.html"
                                                       class="btn btn-dark fw-bolder pb-2 pt-2">Buy
                                                       Now</a>
