@@ -669,6 +669,7 @@ let familia = [
 // }
 
 // let numeros = [5, 2, 3, 13, 22, 6, 7, 1, 9, 10];
+// console.log(numeros);
 // let arrayOrdenado = [];
 // let auxiliar = Number.MAX_VALUE;
 // let indiceAuxiliar;
