@@ -97,6 +97,21 @@ h2 {
   transform: scale(1.5);
 }
 
+.top {
+  position: sticky;
+  bottom: 1.2rem;
+  margin-right: 10px;
+  left: 100%;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  color: #000;
+  background: #fff;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
 /*Redes Sociales */
 
 .svg-inline--fa {
