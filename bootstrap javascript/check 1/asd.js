@@ -686,3 +686,70 @@ let familia = [
 //   numeros.splice(indiceAuxiliar, 1);
 // }
 // console.log(arrayOrdenado);
+
+let container = document.querySelector(".container");
+console.log(container);
+let template = "";
+let productos = [
+  {
+    nombre: "bicicleta",
+    precio: 150000,
+    descripcion: "bicicleta para mtb",
+    stock: 10,
+  },
+  {
+    nombre: "moto",
+    precio: 350000,
+    descripcion: "motocicleta tipo scooter",
+    stock: 5,
+  },
+  {
+    nombre: "monopatin",
+    precio: 80000,
+    descripcion: "monopatin electrico",
+    stock: 25,
+  },
+  {
+    nombre: "auto",
+    precio: 1500000,
+    descripcion: "auto tipo sedan",
+    stock: 2,
+  },
+];
+
+/*agregarProducto(producto) que debera agregar el producto al array de productos y al final debera llamar a la funcion mostrarProductos() para ver reflejado el nuevo producto en el html.
+Todo se debera probar por consola pero deberan verse los cambios en el HTML.
+Realizar todo en funciones pequeñas para poder llamarlas cuando sea necesario.*/
+
+// function mostrarProductos(productos) {
+//   productos.forEach(function (producto) {
+//     template += `
+//     <h3>${producto.nombre}</h3>
+//     <ul>
+//         <li>${producto.descripcion}</li>
+//         <li>${producto.precio}</li>
+//         <li>${producto.stock}</li>
+//     </ul>
+//     `;
+//   });
+//   container.innerHTML = template;
+// }
+
+// function pedirProductos() {
+//   let producto = {
+//     nombre: prompt("ingrese el nombre del producto"),
+//     descripcion: prompt("Ingrese la descripcion del producto"),
+//     precio: parseInt(prompt("ingrese el precio del producto")),
+//     stock: parseInt(prompt("ingrese el stock disponible")),
+//   };
+//   return producto;
+// }
+
+// function agregarProducto(producto) {
+//   productos.push(producto);
+// }
+
+// let productoNuevo = pedirProductos();
+// agregarProducto(productoNuevo);
+
+// mostrarProductos(productos);
