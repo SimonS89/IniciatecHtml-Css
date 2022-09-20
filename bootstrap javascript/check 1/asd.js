@@ -721,35 +721,34 @@ let productos = [
 Todo se debera probar por consola pero deberan verse los cambios en el HTML.
 Realizar todo en funciones pequeñas para poder llamarlas cuando sea necesario.*/
 
-// function mostrarProductos(productos) {
-//   productos.forEach(function (producto) {
-//     template += `
-//     <h3>${producto.nombre}</h3>
-//     <ul>
-//         <li>${producto.descripcion}</li>
-//         <li>${producto.precio}</li>
-//         <li>${producto.stock}</li>
-//     </ul>
-//     `;
-//   });
-//   container.innerHTML = template;
-// }
+function mostrarProductos(productos) {
+  productos.forEach(function (producto) {
+    template += `
+    <h3>${producto.nombre}</h3>
+    <ul>
+        <li>${producto.descripcion}</li>
+        <li>${producto.precio}</li>
+        <li>${producto.stock}</li>
+    </ul>
+    `;
+  });
+  container.innerHTML = template;
+}
 
-// function pedirProductos() {
-//   let producto = {
-//     nombre: prompt("ingrese el nombre del producto"),
-//     descripcion: prompt("Ingrese la descripcion del producto"),
-//     precio: parseInt(prompt("ingrese el precio del producto")),
-//     stock: parseInt(prompt("ingrese el stock disponible")),
-//   };
-//   return producto;
-// }
+function pedirProductos() {
+  let producto = {
+    nombre: prompt("ingrese el nombre del producto"),
+    descripcion: prompt("Ingrese la descripcion del producto"),
+    precio: parseInt(prompt("ingrese el precio del producto")),
+    stock: parseInt(prompt("ingrese el stock disponible")),
+  };
+  return producto;
+}
 
-// function agregarProducto(producto) {
-//   productos.push(producto);
-// }
+function agregarProducto(producto) {
+  productos.push(producto);
+}
 
-// let productoNuevo = pedirProductos();
-// agregarProducto(productoNuevo);
+let productoNuevo = pedirProductos();
 
-// mostrarProductos(productos);
+mostrarProductos(productos);
