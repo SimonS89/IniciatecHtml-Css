@@ -8,18 +8,18 @@ let cardsPast = document.getElementById("cards__past");
 let cardsUpcoming = document.getElementById("cards__upcoming");
 
 if (cardsHome != null) {
-  eventos.forEach((evento) => {
+  eventos.map((evento) => {
     renderizar(evento, cardsHome);
   });
 } else if (cardsPast != null) {
-  eventos.forEach((evento) => {
+  eventos.map((evento) => {
     let date = evento.date;
     if (date < anioActual) {
       renderizar(evento, cardsPast);
     }
   });
 } else {
-  eventos.forEach((evento) => {
+  eventos.map((evento) => {
     let date = evento.date;
     if (date > anioActual) {
       renderizar(evento, cardsUpcoming);
