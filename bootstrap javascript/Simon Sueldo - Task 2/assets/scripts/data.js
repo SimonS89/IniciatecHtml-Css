@@ -208,4 +208,30 @@ function renderizar(evento, contenedor) {
   contenedor.appendChild(card);
 }
 
-export { datos, renderizar };
+function renderizarCategorias(contenedor) {
+  categorias().forEach(function (categoria) {
+    let label = document.createElement("label");
+    label.classList.add("col-12", "col-md-12", "col-lg-auto");
+    label.setAttribute("for", categoria.replace(" ", "__"));
+    label.textContent = categoria;
+    label.innerHTML = ` <input id=${categoria.replace(
+      " ",
+      "__"
+    )} type="checkbox" value=${categoria.replace(" ", "__")}>
+                                    ${categoria} 
+`;
+    contenedor.prepend(label);
+  });
+}
+
+function categorias() {
+  let categorias = [];
+  datos.eventos.forEach((evento) => {
+    if (!categorias.includes(evento.category)) {
+      categorias.push(evento.category);
+    }
+  });
+  return categorias;
+}
+
+export { datos, renderizar, renderizarCategorias };
