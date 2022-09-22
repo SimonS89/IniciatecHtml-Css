@@ -217,7 +217,7 @@ function renderizarCategorias(contenedor) {
     label.innerHTML = ` <input id=${categoria.replace(
       " ",
       "__"
-    )} name="categorias" type="checkbox" value=${categoria.replace(" ", "__")}>
+    )} name="categorias" type="checkbox" value=${categoria}>
                                     ${categoria} 
 `;
     contenedor.prepend(label);

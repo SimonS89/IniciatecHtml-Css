@@ -32,8 +32,16 @@ window.addEventListener("load", () => {
     renderizarCategorias(formContainer);
   }
 
+  //   const botonBook = document.querySelectorAll("input[name=categorias]");
+  //   console.log(botonBook);
+  //   botonBook.addEventListener("click", function () {
+  //     console.log(this.checked);
+  //   });
   //version varios js
   // eventos.forEach((evento) => {
   //   renderizar(evento, cardsHome);
   // });
+  //   let myStr = "Hello World";
+  //   let firstWord = myStr.split(" ")[0];
+  //   console.log(firstWord);
 });
