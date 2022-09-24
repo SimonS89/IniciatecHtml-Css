@@ -175,40 +175,57 @@ const datos = {
   ],
 };
 
-function renderizar(evento, contenedor) {
-  let card = document.createElement("div");
-  card.classList.add(
-    "card",
-    "text-center",
-    "col-12",
-    "col-md-5",
-    "col-lg-3",
-    "pb-2",
-    "text-bg-secondary"
-  );
-  card.innerHTML = `      
-    <div class="inner">
-        <img src=${evento.image} class="card-img-top" alt=${evento.name}>
-     </div>
-     <div class="card-body d-flex flex-column">
-         <h5 class="card-title">${evento.name}</h5>
-         <p class="card-text">${evento.description} </p>
-         <div class="d-flex justify-content-center gap-2" style="margin-top:auto">
-         <span class="d-flex align-items-center  badge text-bg-light p-3 ">Price: $${
-           evento.price
-         }</span>
-         <a href=${
-           document.getElementById("cards__home") != null
-             ? "./assets/pages/details.html"
-             : "./../pages/details.html"
-         } class="btn btn-dark fw-bolder pb-2 pt-2" >Buy Now
-         </a>
-         </div>
-     </div>`;
-  contenedor.appendChild(card);
+function renderizarCards(eventos, cards_container) {
+  cards_container.innerHTML = "";
+  if (eventos.length == 0) {
+    cards_container.innerHTML = `<h3 class="text-center text-light">There are no events with those specifications</h3>
+    <h4 class="text-center text-light">Suggestions:</h3>
+    <ul class="text-center text-light fw-bold" style="list-style-type: none ">
+    <li >Make sure that all the words are correctly written.</li>
+    <li>Try using other words.</li>
+    <li>Try more general keywords.</li>
+    <li>Try another category.</li>
+    </ul>
+    `;
+  } else {
+    eventos.forEach((evento) => {
+      let card = document.createElement("div");
+      card.classList.add(
+        "card",
+        "text-center",
+        "col-12",
+        "col-md-5",
+        "col-lg-3",
+        "pb-2",
+        "text-bg-secondary"
+      );
+      card.innerHTML = `
+              <div class="inner">
+                  <img src=${evento.image} class="card-img-top" alt=${
+        evento.name
+      }>
+               </div>
+               <div class="card-body d-flex flex-column">
+                   <h5 class="card-title">${evento.name}</h5>
+                   <p class="card-text">${evento.description} </p>
+                   <div class="d-flex justify-content-center gap-2" style="margin-top:auto">
+                   <span class="d-flex align-items-center  badge text-bg-light p-3 ">Price: $${
+                     evento.price
+                   }</span>
+                   <a href=${
+                     document.title == "MDHL Home"
+                       ? "./assets/pages/details.html?name=" + evento.name
+                       : "./../pages/details.html?name=" + evento.name
+                   } class="btn btn-dark fw-bolder pb-2 pt-2" >Buy Now
+                   </a>
+                   </div>
+               </div>`;
+      cards_container.appendChild(card);
+    });
+  }
 }
 
-function renderizarCategorias(contenedor) {
+function renderizarCategorias(formContainer) {
   categorias().forEach(function (categoria) {
     let label = document.createElement("label");
     label.classList.add("col-12", "col-md-12", "col-lg-auto");
@@ -218,9 +235,9 @@ function renderizarCategorias(contenedor) {
       " ",
       "__"
     )} name="categorias" type="checkbox" value=${categoria}>
-                                    ${categoria} 
-`;
-    contenedor.prepend(label);
+                                      ${categoria} 
+  `;
+    formContainer.prepend(label);
   });
 }
 
@@ -234,4 +251,4 @@ function categorias() {
   return categorias;
 }
 
-export { datos, renderizar, renderizarCategorias };
+export { datos, renderizarCards, renderizarCategorias };
