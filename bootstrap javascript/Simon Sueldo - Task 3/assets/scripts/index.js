@@ -72,9 +72,8 @@ window.addEventListener("load", () => {
         }
       });
     });
-    if (categoriasFiltradas.length < 1) {
-      eventosPorCategoria = eventos;
-    }
-    return eventosPorCategoria;
+    return categoriasFiltradas.length < 1
+      ? (eventosPorCategoria = eventos)
+      : eventosPorCategoria;
   }
 });
