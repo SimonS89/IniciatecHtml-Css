@@ -1,13 +1,11 @@
 let cadenaParametrosUrl = location.search;
 let parametros = new URLSearchParams(cadenaParametrosUrl);
-let name = parametros.get("name");
+let id = parametros.get("id");
 import { datos } from "./data.js";
 const eventos = datos.eventos;
 const fechaActual = datos.fechaActual;
 const detailContainer = document.getElementById("detailContainer");
-let eventoEncontrado = eventos.find(
-  (evento) => evento.name.split(" ")[0] == name
-);
+let eventoEncontrado = eventos.find((evento) => evento._id == id);
 renderizarDetail(eventoEncontrado);
 function renderizarDetail(evento) {
   let div = document.createElement("div");

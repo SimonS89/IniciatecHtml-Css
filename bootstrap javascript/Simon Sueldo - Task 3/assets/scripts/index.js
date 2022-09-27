@@ -38,8 +38,7 @@ window.addEventListener("load", () => {
   //Funciones de ayuda
   function filtrarPorTexto(eventos) {
     let texto = inputBusqueda.value;
-    let eventosValidosSearch = [];
-    eventosValidosSearch = eventos.filter((evento) => {
+    let eventosValidosSearch = eventos.filter((evento) => {
       return evento.name.toLowerCase().includes(texto.toLowerCase());
     });
     return eventosValidosSearch;

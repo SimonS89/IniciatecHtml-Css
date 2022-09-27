@@ -2,6 +2,7 @@ const datos = {
   fechaActual: "2022-01-01",
   eventos: [
     {
+      _id: 1,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Feriadecomidas7.jpg",
       name: "Collectivities Party",
@@ -15,10 +16,11 @@ const datos = {
       price: 5,
     },
     {
+      _id: 2,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Feriadecomidas2.jpg",
       name: "Korean style",
-      date: "2021-08-12",
+      date: "2022-08-12",
       description:
         "Enjoy the best Korean dishes, with international chefs and awesome events.",
       category: "Food Fair",
@@ -28,6 +30,7 @@ const datos = {
       price: 10,
     },
     {
+      _id: 3,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo5.jpg",
       name: "Jurassic Park",
@@ -41,6 +44,7 @@ const datos = {
       price: 15,
     },
     {
+      _id: 4,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Salidaalmuseo1.jpg",
       name: "Parisian Museum",
@@ -54,6 +58,7 @@ const datos = {
       price: 3500,
     },
     {
+      _id: 5,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Fiestadedisfraces2.jpg",
       name: "Comicon",
@@ -67,6 +72,7 @@ const datos = {
       price: 54,
     },
     {
+      _id: 6,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Fiestadedisfraces1.jpg",
       name: "Halloween Night",
@@ -79,6 +85,7 @@ const datos = {
       price: 12,
     },
     {
+      _id: 7,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica1.jpg",
       name: "Metallica in concert",
@@ -91,6 +98,7 @@ const datos = {
       price: 150,
     },
     {
+      _id: 8,
       image:
         "https://amazingeventsapi.herokuapp.com/api/img/Conciertodemusica2.jpg",
       name: "Electronic Fest",
@@ -104,20 +112,22 @@ const datos = {
       price: 250,
     },
     {
+      _id: 9,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Maraton3.jpg",
       name: "10K for life",
       date: "2021-03-01",
       description: "Come and exercise, improve your health and lifestyle.",
       category: "Race",
-      place: "Campo de FutbÃ³l",
+      place: "Soccer field",
       capacity: 30000,
       assistance: 25698,
       price: 3,
     },
     {
+      _id: 10,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Maraton1.jpg",
       name: "15K NY",
-      date: "2021-03-01",
+      date: "2022-03-01",
       description:
         "We'll be raising funds for hospitals and medical care in this unique event held in The Big Apple.",
       category: "Race",
@@ -127,6 +137,7 @@ const datos = {
       price: 3,
     },
     {
+      _id: 11,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Libros7.jpg",
       name: "School's book fair",
       date: "2022-10-15",
@@ -138,6 +149,7 @@ const datos = {
       price: 1,
     },
     {
+      _id: 12,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Libros3.jpg",
       name: "Just for your kitchen",
       date: "2021-11-09",
@@ -150,6 +162,7 @@ const datos = {
       price: 100,
     },
     {
+      _id: 13,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Cine3.jpg",
       name: "Batman",
       date: "2021-3-11",
@@ -161,6 +174,7 @@ const datos = {
       price: 225,
     },
     {
+      _id: 14,
       image: "https://amazingeventsapi.herokuapp.com/api/img/Cine7.jpg",
       name: "Avengers",
       date: "2022-10-15",
@@ -214,8 +228,8 @@ function renderizarCards(eventos, cards_container) {
                    }</span>
                    <a href=${
                      document.title == "MDHL Home"
-                       ? "./assets/pages/details.html?name=" + evento.name
-                       : "./../pages/details.html?name=" + evento.name
+                       ? "./assets/pages/details.html?id=" + evento._id
+                       : "./../pages/details.html?id=" + evento._id
                    } class="btn btn-dark fw-bolder pb-2 pt-2" >Buy Now
                    </a>
                    </div>

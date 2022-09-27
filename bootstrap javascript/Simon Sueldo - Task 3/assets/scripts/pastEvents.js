@@ -39,8 +39,7 @@ window.addEventListener("load", () => {
 
   function filtrarPorTexto(eventos) {
     let texto = inputBusqueda.value;
-    let eventosValidosSearch = [];
-    eventosValidosSearch = eventos.filter((evento) => {
+    let eventosValidosSearch = eventos.filter((evento) => {
       return evento.name.toLowerCase().includes(texto.toLowerCase());
     });
     return eventosValidosSearch;
@@ -79,14 +78,9 @@ window.addEventListener("load", () => {
   }
 
   function eventosPast() {
-    let eventosUpcoming = [];
-    datos.eventos.forEach((evento) => {
-      let date = evento.date;
-      let anioActual = datos.fechaActual;
-      if (date < anioActual) {
-        eventosUpcoming.push(evento);
-      }
-    });
-    return eventosUpcoming;
+    let eventosPast = datos.eventos.filter(
+      (evento) => evento.date < datos.fechaActual
+    );
+    return eventosPast;
   }
 });
