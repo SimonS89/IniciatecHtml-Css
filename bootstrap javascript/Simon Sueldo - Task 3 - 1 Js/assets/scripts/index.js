@@ -2,7 +2,7 @@ import { datos, renderizarCards, renderizarCategorias } from "./data.js";
 window.addEventListener("load", () => {
   const formContainer = document.querySelector(".form__categories");
   const cards_container = document.getElementById("cards_container");
-  const eventos = datos.eventos;
+  const eventos = datos.events;
   const pastEvents = eventosPast();
   const upcomingEvents = eventosUpcoming();
   //ingresar dinamicamente las cards y categorias
@@ -71,14 +71,6 @@ window.addEventListener("load", () => {
     checkboxCategorias.forEach((checkbox) => {
       if (checkbox.checked) {
         categoriasFiltradas.push(checkbox.value);
-      } else if (
-        !checkbox.checked &&
-        categoriasFiltradas.includes(checkbox.value)
-      ) {
-        categoriasFiltradas.splice(
-          categoriasFiltradas.indexOf(checkbox.value),
-          1
-        );
       }
     });
     return categoriasFiltradas;
@@ -99,15 +91,15 @@ window.addEventListener("load", () => {
   }
 
   function eventosPast() {
-    let eventosPast = datos.eventos.filter(
-      (evento) => evento.date < datos.fechaActual
+    let eventosPast = eventos.filter(
+      (evento) => evento.date < datos.currentDate
     );
     return eventosPast;
   }
 
   function eventosUpcoming() {
-    let eventosUpcoming = datos.eventos.filter(
-      (evento) => evento.date >= datos.fechaActual
+    let eventosUpcoming = eventos.filter(
+      (evento) => evento.date >= datos.currentDate
     );
     return eventosUpcoming;
   }

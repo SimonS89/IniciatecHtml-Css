@@ -1,6 +1,6 @@
 const datos = {
-  fechaActual: "2022-01-01",
-  eventos: [
+  currentDate: "2022-01-01",
+  events: [
     {
       _id: 1,
       image:
@@ -257,7 +257,7 @@ function renderizarCategorias(formContainer) {
 
 function categorias() {
   let categorias = [];
-  datos.eventos.forEach((evento) => {
+  datos.events.forEach((evento) => {
     if (!categorias.includes(evento.category)) {
       categorias.push(evento.category);
     }
