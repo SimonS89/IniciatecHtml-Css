@@ -244,11 +244,10 @@ function renderizarCategorias(formContainer) {
     let label = document.createElement("label");
     label.classList.add("col-12", "col-md-12", "col-lg-auto");
     label.setAttribute("for", categoria.replace(" ", "__"));
-    label.textContent = categoria;
     label.innerHTML = ` <input id=${categoria.replace(
       " ",
       "__"
-    )} name="categorias" type="checkbox" value=${categoria}>
+    )} name="categorias" type="checkbox" value="${categoria}">
                                       ${categoria} 
   `;
     formContainer.prepend(label);

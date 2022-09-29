@@ -21,7 +21,6 @@ window.addEventListener("load", () => {
 
   //filtrar las cards por texto ingresado
   inputBusqueda.addEventListener("keyup", function () {
-    let categoriasFiltradasCheckbox = filtrarPorCheckbox(checkboxCategorias);
     let filtradosPorTexto;
     if (document.title == "MDHL Home") {
       filtradosPorTexto = filtrarPorTexto(eventos);
@@ -32,15 +31,15 @@ window.addEventListener("load", () => {
     }
     let eventosFiltrados = filtrarEventosPorCategoria(
       filtradosPorTexto,
-      categoriasFiltradasCheckbox
+      checkboxCategorias
     );
+    console.log(eventosFiltrados);
     renderizarCards(eventosFiltrados, cards_container);
   });
 
   //filtrar las cards por checkbox
   checkboxCategorias.forEach((checkbox) => {
     checkbox.addEventListener("click", function () {
-      let categoriasFiltradasCheckbox = filtrarPorCheckbox(checkboxCategorias);
       let filtradosPorTexto;
       if (document.title == "MDHL Home") {
         filtradosPorTexto = filtrarPorTexto(eventos);
@@ -51,7 +50,7 @@ window.addEventListener("load", () => {
       }
       let eventosFiltrados = filtrarEventosPorCategoria(
         filtradosPorTexto,
-        categoriasFiltradasCheckbox
+        checkboxCategorias
       );
       renderizarCards(eventosFiltrados, cards_container);
     });
@@ -59,32 +58,23 @@ window.addEventListener("load", () => {
 
   //Funciones de ayuda
   function filtrarPorTexto(eventos) {
-    let texto = inputBusqueda.value;
-    let eventosValidosSearch = eventos.filter((evento) => {
-      return evento.name.toLowerCase().includes(texto.toLowerCase());
-    });
+    let texto = inputBusqueda.value.toLowerCase();
+    let eventosValidosSearch = eventos.filter((evento) =>
+      evento.name.toLowerCase().includes(texto)
+    );
     return eventosValidosSearch;
   }
 
-  function filtrarPorCheckbox(checkboxCategorias) {
+  function filtrarEventosPorCategoria(eventos, checkboxCategorias) {
     let categoriasFiltradas = [];
     checkboxCategorias.forEach((checkbox) => {
       if (checkbox.checked) {
         categoriasFiltradas.push(checkbox.value);
       }
     });
-    return categoriasFiltradas;
-  }
-
-  function filtrarEventosPorCategoria(eventos, categoriasFiltradas) {
-    let eventosPorCategoria = [];
-    categoriasFiltradas.forEach(function (categoria) {
-      eventos.forEach(function (evento) {
-        if (evento.category.split(" ")[0] == categoria) {
-          eventosPorCategoria.push(evento);
-        }
-      });
-    });
+    let eventosPorCategoria = eventos.filter((evento) =>
+      categoriasFiltradas.includes(evento.category)
+    );
     return categoriasFiltradas.length < 1
       ? (eventosPorCategoria = eventos)
       : eventosPorCategoria;
