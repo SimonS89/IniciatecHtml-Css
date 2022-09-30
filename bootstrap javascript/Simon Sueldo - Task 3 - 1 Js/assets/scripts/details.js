@@ -6,6 +6,9 @@ const eventos = datos.events;
 const fechaActual = datos.currentDate;
 const detailContainer = document.getElementById("detailContainer");
 let eventoEncontrado = eventos.find((evento) => evento._id == id);
+let asistOrEst = eventoEncontrado.assistance
+  ? eventoEncontrado.assistance
+  : eventoEncontrado.estimate;
 renderizarDetail(eventoEncontrado);
 function renderizarDetail(evento) {
   let div = document.createElement("div");
@@ -35,7 +38,7 @@ function renderizarDetail(evento) {
     fechaActual > evento.date
       ? " we had an attendance of "
       : " we estimate an attendance of "
-  }${fechaActual > evento.date ? evento.assistance : evento.capacity}.<strong>${
+  }${asistOrEst}.<strong>${
     fechaActual > evento.date
       ? " We hope to see you in our next edition of this event!"
       : " Join us, you are gonna enjoy it!"
