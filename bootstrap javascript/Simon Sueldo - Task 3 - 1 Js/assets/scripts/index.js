@@ -1,12 +1,9 @@
-// import { /*datos , renderizarCards, renderizarCategorias*/ } from "./data.js";
 window.addEventListener("load", () => {
   const formContainer = document.querySelector(".form__categories");
   const cards_container = document.getElementById("cards_container");
   const inputBusqueda = document.getElementById("inputSearch");
   const URI = "https://amazing-events.herokuapp.com/api/events";
   let eventos = [];
-  let pastEvents = [];
-  let upcomingEvents = [];
   cargarDatos(URI);
 
   //filtrar las cards por texto ingresado
@@ -119,13 +116,7 @@ window.addEventListener("load", () => {
   //Funcion super filtro con condicionales dependiendo la pagina en la que estoy ubicado
   function superFiltroCondicional() {
     let filtradosPorTexto;
-    if (document.title == "MDHL Home") {
-      filtradosPorTexto = filtrarPorTexto(eventos);
-    } else if (document.title == "MDHL Upcoming Events") {
-      filtradosPorTexto = filtrarPorTexto(upcomingEvents);
-    } else {
-      filtradosPorTexto = filtrarPorTexto(pastEvents);
-    }
+    filtradosPorTexto = filtrarPorTexto(eventos);
     let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
     renderizarCards(eventosFiltrados);
   }
@@ -135,19 +126,17 @@ window.addEventListener("load", () => {
       .then((response) => response.json())
       .then((data) => {
         eventos = data.events;
-        pastEvents = eventos.filter((evento) => evento.date < data.currentDate);
-        upcomingEvents = eventos.filter(
-          (evento) => evento.date >= data.currentDate
-        );
+        if (document.title == "MDHL Home") {
+          eventos = data.events;
+        } else if (document.title == "MDHL Upcoming Events") {
+          eventos = eventos.filter((evento) => evento.date >= data.currentDate);
+        } else {
+          eventos = eventos.filter((evento) => evento.date < data.currentDate);
+        }
+        console.log(eventos);
+        renderizarCards(eventos);
         let categoriasFiltradas = categorias(eventos);
         renderizarCategorias(categoriasFiltradas);
-        if (document.title == "MDHL Home") {
-          renderizarCards(eventos);
-        } else if (document.title == "MDHL Upcoming Events") {
-          renderizarCards(upcomingEvents);
-        } else {
-          renderizarCards(pastEvents);
-        }
       })
       .catch((err) => console.warn(err));
   }

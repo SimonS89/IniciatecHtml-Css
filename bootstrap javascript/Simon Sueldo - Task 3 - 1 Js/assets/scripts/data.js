@@ -188,5 +188,3 @@ const datos = {
     },
   ],
 };
-
-export { datos /*, renderizarCards, renderizarCategorias */ };
