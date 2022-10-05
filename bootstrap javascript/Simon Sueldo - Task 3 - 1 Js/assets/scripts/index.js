@@ -1,4 +1,5 @@
-import { datos, renderizarCards, renderizarCategorias } from "./data.js";
+import { datos /*, renderizarCards, renderizarCategorias*/ } from "./data.js";
+
 window.addEventListener("load", () => {
   const formContainer = document.querySelector(".form__categories");
   const cards_container = document.getElementById("cards_container");
@@ -7,17 +8,14 @@ window.addEventListener("load", () => {
   const upcomingEvents = eventosUpcoming();
   //ingresar dinamicamente las cards y categorias
   if (document.title == "MDHL Home") {
-    renderizarCards(eventos, cards_container);
+    renderizarCards(eventos);
   } else if (document.title == "MDHL Upcoming Events") {
-    renderizarCards(upcomingEvents, cards_container);
+    renderizarCards(upcomingEvents);
   } else {
-    renderizarCards(pastEvents, cards_container);
+    renderizarCards(pastEvents);
   }
-  renderizarCategorias(formContainer);
+  renderizarCategorias();
   const inputBusqueda = document.getElementById("inputSearch");
-  const checkboxCategorias = document.querySelectorAll(
-    "input[name=categorias]"
-  );
 
   //filtrar las cards por texto ingresado
   inputBusqueda.addEventListener("keyup", function () {
@@ -29,34 +27,27 @@ window.addEventListener("load", () => {
     } else {
       filtradosPorTexto = filtrarPorTexto(pastEvents);
     }
-    let eventosFiltrados = filtrarEventosPorCategoria(
-      filtradosPorTexto,
-      checkboxCategorias
-    );
+    let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
     console.log(eventosFiltrados);
-    renderizarCards(eventosFiltrados, cards_container);
+    renderizarCards(eventosFiltrados);
   });
 
   //filtrar las cards por checkbox
-  checkboxCategorias.forEach((checkbox) => {
-    checkbox.addEventListener("click", function () {
-      let filtradosPorTexto;
-      if (document.title == "MDHL Home") {
-        filtradosPorTexto = filtrarPorTexto(eventos);
-      } else if (document.title == "MDHL Upcoming Events") {
-        filtradosPorTexto = filtrarPorTexto(upcomingEvents);
-      } else {
-        filtradosPorTexto = filtrarPorTexto(pastEvents);
-      }
-      let eventosFiltrados = filtrarEventosPorCategoria(
-        filtradosPorTexto,
-        checkboxCategorias
-      );
-      renderizarCards(eventosFiltrados, cards_container);
-    });
+  formContainer.addEventListener("change", function () {
+    let filtradosPorTexto;
+    if (document.title == "MDHL Home") {
+      filtradosPorTexto = filtrarPorTexto(eventos);
+    } else if (document.title == "MDHL Upcoming Events") {
+      filtradosPorTexto = filtrarPorTexto(upcomingEvents);
+    } else {
+      filtradosPorTexto = filtrarPorTexto(pastEvents);
+    }
+    let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
+    renderizarCards(eventosFiltrados);
   });
 
   //Funciones de ayuda
+  //Funcion para filtrar por texto ingresado por el usuario
   function filtrarPorTexto(eventos) {
     let texto = inputBusqueda.value.toLowerCase();
     let eventosValidosSearch = eventos.filter((evento) =>
@@ -65,21 +56,23 @@ window.addEventListener("load", () => {
     return eventosValidosSearch;
   }
 
-  function filtrarEventosPorCategoria(eventos, checkboxCategorias) {
-    let categoriasFiltradas = [];
-    checkboxCategorias.forEach((checkbox) => {
-      if (checkbox.checked) {
-        categoriasFiltradas.push(checkbox.value);
-      }
-    });
-    let eventosPorCategoria = eventos.filter((evento) =>
-      categoriasFiltradas.includes(evento.category)
+  // funcion para filtrar por checkbox presionados por el usuario
+  function filtrarEventosPorCategoria(eventos) {
+    let checkboxCategorias = Array.from(
+      document.querySelectorAll("input[name=categorias]")
+    )
+      .filter((checkbox) => checkbox.checked)
+      .map((checkboxChecked) => checkboxChecked.value);
+    if (checkboxCategorias.length == 0) {
+      return eventos;
+    }
+    let eventosFiltrados = eventos.filter((evento) =>
+      checkboxCategorias.includes(evento.category)
     );
-    return categoriasFiltradas.length < 1
-      ? (eventosPorCategoria = eventos)
-      : eventosPorCategoria;
+    return eventosFiltrados;
   }
 
+  // function que devuelve los eventos pasados filtrados por fecha
   function eventosPast() {
     let eventosPast = eventos.filter(
       (evento) => evento.date < datos.currentDate
@@ -87,10 +80,89 @@ window.addEventListener("load", () => {
     return eventosPast;
   }
 
+  // function que devuelve los eventos futuros filtrados por fecha
   function eventosUpcoming() {
     let eventosUpcoming = eventos.filter(
       (evento) => evento.date >= datos.currentDate
     );
     return eventosUpcoming;
+  }
+
+  //funcion que muestra los eventos por pantalla
+  function renderizarCards(eventos) {
+    cards_container.innerHTML = "";
+    if (eventos.length == 0) {
+      cards_container.innerHTML = `<h3 class="text-center text-light">There are no events with those specifications</h3>
+      <h4 class="text-center text-light">Suggestions:</h3>
+      <ul class="text-center text-light fw-bold" style="list-style-type: none ">
+      <li >Make sure that all the words are correctly written.</li>
+      <li>Try using other words.</li>
+      <li>Try more general keywords.</li>
+      <li>Try another category.</li>
+      </ul>
+      `;
+    } else {
+      eventos.forEach((evento) => {
+        let card = document.createElement("div");
+        card.classList.add(
+          "card",
+          "text-center",
+          "col-12",
+          "col-md-5",
+          "col-lg-3",
+          "pb-2",
+          "text-bg-secondary"
+        );
+        card.innerHTML = `
+                <div class="inner">
+                    <img src=${evento.image} class="card-img-top" alt=${
+          evento.name
+        }>
+                 </div>
+                 <div class="card-body d-flex flex-column">
+                     <h5 class="card-title">${evento.name}</h5>
+                     <p class="card-text">${evento.description} </p>
+                     <div class="d-flex justify-content-center gap-2" style="margin-top:auto">
+                     <span class="d-flex align-items-center  badge text-bg-light p-3 ">Price: $${
+                       evento.price
+                     }</span>
+                     <a href=${
+                       document.title == "MDHL Home"
+                         ? "./assets/pages/details.html?id=" + evento._id
+                         : "./../pages/details.html?id=" + evento._id
+                     } class="btn btn-dark fw-bolder pb-2 pt-2" >Buy Now
+                     </a>
+                     </div>
+                 </div>`;
+        cards_container.appendChild(card);
+      });
+    }
+  }
+
+  //function que muestra las categorias por pantalla
+  function renderizarCategorias() {
+    categorias().forEach(function (categoria) {
+      let label = document.createElement("label");
+      label.classList.add("col-12", "col-md-12", "col-lg-auto", "ms-2", "me-2");
+      label.setAttribute("for", categoria.replace(" ", "__"));
+      label.innerHTML = ` <input id=${categoria.replace(
+        " ",
+        "__"
+      )} name="categorias" type="checkbox" value="${categoria}">
+                                        ${categoria} 
+    `;
+      formContainer.prepend(label);
+    });
+  }
+
+  //funcion para obtener las categorias no duplicadas
+  function categorias() {
+    let categorias = [];
+    eventos.forEach((evento) => {
+      if (!categorias.includes(evento.category)) {
+        categorias.push(evento.category);
+      }
+    });
+    return categorias;
   }
 });
