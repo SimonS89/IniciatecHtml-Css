@@ -1,15 +1,11 @@
 let cadenaParametrosUrl = location.search;
 let parametros = new URLSearchParams(cadenaParametrosUrl);
 let id = parametros.get("id");
-import { datos } from "./data.js";
-const eventos = datos.events;
-const fechaActual = datos.currentDate;
 const detailContainer = document.getElementById("detailContainer");
-let eventoEncontrado = eventos.find((evento) => evento._id == id);
-let asistOrEst = eventoEncontrado.assistance
-  ? eventoEncontrado.assistance
-  : eventoEncontrado.estimate;
-renderizarDetail(eventoEncontrado);
+const URI = "https://amazing-events.herokuapp.com/api/events";
+let fechaActual = "";
+let assistOrEst;
+
 function renderizarDetail(evento) {
   let div = document.createElement("div");
   div.className =
@@ -38,7 +34,7 @@ function renderizarDetail(evento) {
     fechaActual > evento.date
       ? " we had an attendance of "
       : " we estimate an attendance of "
-  }${asistOrEst}.<strong>${
+  }${assistOrEst}.<strong>${
     fechaActual > evento.date
       ? " We hope to see you in our next edition of this event!"
       : " Join us, you are gonna enjoy it!"
@@ -48,8 +44,28 @@ function renderizarDetail(evento) {
                                                   evento.date
                                                 }</small>
                                                 </p>
+                                                
+                     <span class="d-flex align-items-center justify-content-center text-center badge text-bg-light p-2 fs-5">Price: $${
+                       evento.price
+                     }</span>
                                           </div>
                                     </div>
                               </div>`;
   detailContainer.appendChild(div);
+}
+
+traerDatos(URI);
+function traerDatos(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      let eventos = data.events;
+      fechaActual = data.currentDate;
+      let eventoEncontrado = eventos.find((evento) => evento._id == id);
+      assistOrEst = eventoEncontrado.assistance
+        ? eventoEncontrado.assistance
+        : eventoEncontrado.estimate;
+      renderizarDetail(eventoEncontrado);
+    })
+    .catch((err) => console.warn(err));
 }

@@ -1,50 +1,19 @@
-import { datos /*, renderizarCards, renderizarCategorias*/ } from "./data.js";
-
+// import { /*datos , renderizarCards, renderizarCategorias*/ } from "./data.js";
 window.addEventListener("load", () => {
   const formContainer = document.querySelector(".form__categories");
   const cards_container = document.getElementById("cards_container");
-  const eventos = datos.events;
-  const pastEvents = eventosPast();
-  const upcomingEvents = eventosUpcoming();
-  //ingresar dinamicamente las cards y categorias
-  if (document.title == "MDHL Home") {
-    renderizarCards(eventos);
-  } else if (document.title == "MDHL Upcoming Events") {
-    renderizarCards(upcomingEvents);
-  } else {
-    renderizarCards(pastEvents);
-  }
-  renderizarCategorias();
   const inputBusqueda = document.getElementById("inputSearch");
+  const URI = "https://amazing-events.herokuapp.com/api/events";
+  let eventos = [];
+  let pastEvents = [];
+  let upcomingEvents = [];
+  cargarDatos(URI);
 
   //filtrar las cards por texto ingresado
-  inputBusqueda.addEventListener("keyup", function () {
-    let filtradosPorTexto;
-    if (document.title == "MDHL Home") {
-      filtradosPorTexto = filtrarPorTexto(eventos);
-    } else if (document.title == "MDHL Upcoming Events") {
-      filtradosPorTexto = filtrarPorTexto(upcomingEvents);
-    } else {
-      filtradosPorTexto = filtrarPorTexto(pastEvents);
-    }
-    let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
-    console.log(eventosFiltrados);
-    renderizarCards(eventosFiltrados);
-  });
+  inputBusqueda.addEventListener("keyup", superFiltroCondicional);
 
   //filtrar las cards por checkbox
-  formContainer.addEventListener("change", function () {
-    let filtradosPorTexto;
-    if (document.title == "MDHL Home") {
-      filtradosPorTexto = filtrarPorTexto(eventos);
-    } else if (document.title == "MDHL Upcoming Events") {
-      filtradosPorTexto = filtrarPorTexto(upcomingEvents);
-    } else {
-      filtradosPorTexto = filtrarPorTexto(pastEvents);
-    }
-    let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
-    renderizarCards(eventosFiltrados);
-  });
+  formContainer.addEventListener("change", superFiltroCondicional);
 
   //Funciones de ayuda
   //Funcion para filtrar por texto ingresado por el usuario
@@ -72,22 +41,6 @@ window.addEventListener("load", () => {
     return eventosFiltrados;
   }
 
-  // function que devuelve los eventos pasados filtrados por fecha
-  function eventosPast() {
-    let eventosPast = eventos.filter(
-      (evento) => evento.date < datos.currentDate
-    );
-    return eventosPast;
-  }
-
-  // function que devuelve los eventos futuros filtrados por fecha
-  function eventosUpcoming() {
-    let eventosUpcoming = eventos.filter(
-      (evento) => evento.date >= datos.currentDate
-    );
-    return eventosUpcoming;
-  }
-
   //funcion que muestra los eventos por pantalla
   function renderizarCards(eventos) {
     cards_container.innerHTML = "";
@@ -108,9 +61,9 @@ window.addEventListener("load", () => {
           "card",
           "text-center",
           "col-12",
-          "col-md-5",
+          "col-md-4",
           "col-lg-3",
-          "pb-2",
+          "col-xl-2",
           "text-bg-secondary"
         );
         card.innerHTML = `
@@ -122,10 +75,7 @@ window.addEventListener("load", () => {
                  <div class="card-body d-flex flex-column">
                      <h5 class="card-title">${evento.name}</h5>
                      <p class="card-text">${evento.description} </p>
-                     <div class="d-flex justify-content-center gap-2" style="margin-top:auto">
-                     <span class="d-flex align-items-center  badge text-bg-light p-3 ">Price: $${
-                       evento.price
-                     }</span>
+                     <div class="d-flex justify-content-center" style="margin-top:auto">
                      <a href=${
                        document.title == "MDHL Home"
                          ? "./assets/pages/details.html?id=" + evento._id
@@ -140,8 +90,8 @@ window.addEventListener("load", () => {
   }
 
   //function que muestra las categorias por pantalla
-  function renderizarCategorias() {
-    categorias().forEach(function (categoria) {
+  function renderizarCategorias(categorias) {
+    categorias.forEach(function (categoria) {
       let label = document.createElement("label");
       label.classList.add("col-12", "col-md-12", "col-lg-auto", "ms-2", "me-2");
       label.setAttribute("for", categoria.replace(" ", "__"));
@@ -156,7 +106,7 @@ window.addEventListener("load", () => {
   }
 
   //funcion para obtener las categorias no duplicadas
-  function categorias() {
+  function categorias(eventos) {
     let categorias = [];
     eventos.forEach((evento) => {
       if (!categorias.includes(evento.category)) {
@@ -164,5 +114,41 @@ window.addEventListener("load", () => {
       }
     });
     return categorias;
+  }
+
+  //Funcion super filtro con condicionales dependiendo la pagina en la que estoy ubicado
+  function superFiltroCondicional() {
+    let filtradosPorTexto;
+    if (document.title == "MDHL Home") {
+      filtradosPorTexto = filtrarPorTexto(eventos);
+    } else if (document.title == "MDHL Upcoming Events") {
+      filtradosPorTexto = filtrarPorTexto(upcomingEvents);
+    } else {
+      filtradosPorTexto = filtrarPorTexto(pastEvents);
+    }
+    let eventosFiltrados = filtrarEventosPorCategoria(filtradosPorTexto);
+    renderizarCards(eventosFiltrados);
+  }
+
+  function cargarDatos(url) {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        eventos = data.events;
+        pastEvents = eventos.filter((evento) => evento.date < data.currentDate);
+        upcomingEvents = eventos.filter(
+          (evento) => evento.date >= data.currentDate
+        );
+        let categoriasFiltradas = categorias(eventos);
+        renderizarCategorias(categoriasFiltradas);
+        if (document.title == "MDHL Home") {
+          renderizarCards(eventos);
+        } else if (document.title == "MDHL Upcoming Events") {
+          renderizarCards(upcomingEvents);
+        } else {
+          renderizarCards(pastEvents);
+        }
+      })
+      .catch((err) => console.warn(err));
   }
 });
