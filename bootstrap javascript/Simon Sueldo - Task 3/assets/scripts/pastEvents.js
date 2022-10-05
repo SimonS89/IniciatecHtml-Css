@@ -50,14 +50,6 @@ window.addEventListener("load", () => {
     checkboxCategorias.forEach((checkbox) => {
       if (checkbox.checked) {
         categoriasFiltradas.push(checkbox.value);
-      } else if (
-        !checkbox.checked &&
-        categoriasFiltradas.includes(checkbox.value)
-      ) {
-        categoriasFiltradas.splice(
-          categoriasFiltradas.indexOf(checkbox.value),
-          1
-        );
       }
     });
     return categoriasFiltradas;
@@ -78,8 +70,8 @@ window.addEventListener("load", () => {
   }
 
   function eventosPast() {
-    let eventosPast = datos.eventos.filter(
-      (evento) => evento.date < datos.fechaActual
+    let eventosPast = datos.events.filter(
+      (evento) => evento.date < datos.currentDate
     );
     return eventosPast;
   }

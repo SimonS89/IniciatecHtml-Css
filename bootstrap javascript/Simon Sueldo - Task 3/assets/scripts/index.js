@@ -2,7 +2,7 @@ import { datos, renderizarCards, renderizarCategorias } from "./data.js";
 window.addEventListener("load", () => {
   const formContainer = document.querySelector(".form__categories");
   const cards_container = document.getElementById("cards_container");
-  const eventos = datos.eventos;
+  const eventos = datos.events;
   //ingresar dinamicamente las cards y categorias
   renderizarCards(eventos, cards_container);
   renderizarCategorias(formContainer);
@@ -49,14 +49,6 @@ window.addEventListener("load", () => {
     checkboxCategorias.forEach((checkbox) => {
       if (checkbox.checked) {
         categoriasFiltradas.push(checkbox.value);
-      } else if (
-        !checkbox.checked &&
-        categoriasFiltradas.includes(checkbox.value)
-      ) {
-        categoriasFiltradas.splice(
-          categoriasFiltradas.indexOf(checkbox.value),
-          1
-        );
       }
     });
     return categoriasFiltradas;
