@@ -32,7 +32,7 @@ function pintarPersonajes(personajes, container) {
   }
   personajes.forEach((personaje) => {
     let card = document.createElement("div");
-    card.className = "card p-0 bg-dark text-light";
+    card.className = "card p-0 bg-dark text-light opacity-90";
     card.style.width = "18rem";
     let funciones = "";
     if (container.id == "cardsContainer") {
@@ -97,7 +97,7 @@ function filtrarPorCategoria(personajes) {
 function crearCheckboxs(casas) {
   casas.forEach((casa) => {
     let div = document.createElement("div");
-    div.className = "form-check form-switch";
+    div.className = "form-check form-switch fs-5 ";
     div.innerHTML = `
                <input class="form-check-input" type="checkbox" role="switch" id="${casa}" value="${casa}">
             <label class="form-check-label" for="${casa}">${casa}</label>
