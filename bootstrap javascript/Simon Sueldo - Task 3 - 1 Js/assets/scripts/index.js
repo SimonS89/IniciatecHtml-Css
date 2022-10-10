@@ -133,7 +133,6 @@ window.addEventListener("load", () => {
         } else {
           eventos = eventos.filter((evento) => evento.date < data.currentDate);
         }
-        console.log(eventos);
         renderizarCards(eventos);
         let categoriasFiltradas = categorias(eventos);
         renderizarCategorias(categoriasFiltradas);
