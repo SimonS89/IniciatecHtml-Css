@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
         let eventosPast = eventos.filter(
           (evento) => evento.date < data.currentDate
         );
-        let filaStatistics = eventsStatistics(eventos);
+        let filaStatistics = eventsStatistics(data);
         pintarTabla(filaStatistics);
         pintarStatisticCategory(eventosUpcoming, upcomingStatistics);
         pintarStatisticCategory(eventosPast, pastStatistics);
@@ -24,28 +24,19 @@ window.addEventListener("load", () => {
       .catch((err) => console.warn(err));
   }
 
-  function eventsStatistics(eventos) {
-    let mayorPorcentaje = 0;
-    let eventoMayor = {};
-    let menorPorcentaje = 100;
-    let eventoMenor = {};
-    let capacidadMayor = eventos
-      .map((evento) => evento.capacity)
-      .sort((a, b) => b - a)[0];
-    let eventoCapacidadMayor = eventos.find(
-      (evento) => evento.capacity == capacidadMayor
-    );
-    eventos.forEach((evento) => {
-      if (eventComparator(evento) > mayorPorcentaje) {
-        mayorPorcentaje = eventComparator(evento);
-        eventoMayor = evento;
-      }
-      if (eventComparator(evento) < menorPorcentaje) {
-        menorPorcentaje = eventComparator(evento);
-        eventoMenor = evento;
-      }
-    });
-    return [eventoMayor, eventoMenor, eventoCapacidadMayor];
+  function eventsStatistics(data) {
+    let eventosOrdenados = data.events
+      .filter((evento) => evento.date < data.currentDate)
+      .sort((a, b) => {
+        return (
+          (parseInt(b.assistance) * 100) / parseInt(b.capacity) -
+          (parseInt(a.assistance) * 100) / parseInt(a.capacity)
+        );
+      });
+    let eventoMayor = eventosOrdenados[0];
+    let eventoMenor = eventosOrdenados[eventosOrdenados.length - 1];
+    let mayorCapacidad = data.events.sort((a, b) => b.capacity - a.capacity)[0];
+    return [eventoMayor, eventoMenor, mayorCapacidad];
   }
 
   function eventComparator(evento) {
@@ -86,7 +77,10 @@ window.addEventListener("load", () => {
             evento.price *
             (evento.assistance ? evento.assistance : evento.estimate)
         )
-        .reduce((accu, ele) => accu + ele);
+        .reduce((accu, ele) => accu + ele)
+        .toString()
+        .split(/(?=(?:...)*$)/)
+        .join(".");
       let revenuesAttendance =
         filtradosCategoria
           .map((evento) => eventComparator(evento))
