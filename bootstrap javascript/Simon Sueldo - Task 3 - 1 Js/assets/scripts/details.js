@@ -10,6 +10,9 @@ function renderizarDetail(evento) {
   let div = document.createElement("div");
   div.className =
     "card shadow-lg rounded text-bg-secondary text-center d-flex flex-wrap";
+  div.setAttribute("data-aos", "flip-left");
+  div.setAttribute("data-aos-easing", "ease-out-cubic");
+  div.setAttribute("data-aos-duration", "1500");
   div.innerHTML = `    
                                   <div class="row g-0">
                                     <div class="col-md-8">

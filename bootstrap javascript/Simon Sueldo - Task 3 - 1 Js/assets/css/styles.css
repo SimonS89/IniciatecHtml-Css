@@ -45,6 +45,29 @@ h2 {
   object-fit: cover;
 }
 
+.underline-hover-effect {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.underline-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d90368;
+  transition: width 0.25s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+  width: 100%;
+}
+
 #main .carousel-inner,
 #main .carousel-inner video,
 #main .carousel-inner img {

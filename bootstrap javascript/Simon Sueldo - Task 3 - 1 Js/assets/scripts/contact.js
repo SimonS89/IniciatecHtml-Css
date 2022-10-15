@@ -1,6 +1,7 @@
 let form = document.querySelector("form");
 form.addEventListener("click", function (e) {
   e.preventDefault();
+  document.getElementById("errors").innerHTML = "";
   let name = document.querySelector("input[type=text]");
   let email = document.querySelector("input[type=email]");
   let textarea = document.querySelector("textarea");
@@ -13,16 +14,21 @@ form.addEventListener("click", function (e) {
     Swal.fire({
       title: "<strong>DONE! <u>We'll get to you soon!</u></strong>",
       icon: "success",
-      html:
-        "<p>We've received your messagge and we'll reply in the next days!</p>",
+      html: "<p>We've received your messagge and we'll reply in the next days!</p>",
       showCloseButton: true,
       focusConfirm: false,
       confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
       confirmButtonAriaLabel: "Thumbs up, great!",
       cancelButtonAriaLabel: "Thumbs down",
+    }).then(function () {
+      location.href = "./../../index.html";
     });
-    setTimeout(() => {
-      form.submit();
-    }, 2000);
+    //     setTimeout(() => {
+    //     }, 2000);
+  } else {
+    document.getElementById("errors").innerHTML = `
+      <li>El nombre debe poseer mas de 4 caracteres</li>
+      <li>ingrese un mail valido</li>
+      <li>Su consulta debe ser mayor a 4 caracteres</li>`;
   }
 });

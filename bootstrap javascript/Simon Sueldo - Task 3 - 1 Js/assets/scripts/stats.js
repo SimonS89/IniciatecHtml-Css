@@ -20,6 +20,7 @@ window.addEventListener("load", () => {
         pintarTabla(filaStatistics);
         pintarStatisticCategory(eventosUpcoming, upcomingStatistics);
         pintarStatisticCategory(eventosPast, pastStatistics);
+        agruparCategoria(eventosUpcoming);
       })
       .catch((err) => console.warn(err));
   }

@@ -63,6 +63,8 @@ window.addEventListener("load", () => {
           "col-xl-2",
           "text-bg-secondary"
         );
+        card.setAttribute("data-aos", "fade-up");
+        card.setAttribute("data-aos-duration", "3000");
         card.innerHTML = `
                 <div class="inner">
                     <img src=${evento.image} class="card-img-top" alt=${
@@ -90,7 +92,14 @@ window.addEventListener("load", () => {
   function renderizarCategorias(categorias) {
     categorias.forEach(function (categoria) {
       let label = document.createElement("label");
-      label.classList.add("col-12", "col-md-12", "col-lg-auto", "ms-2", "me-2");
+      label.classList.add(
+        "col-12",
+        "col-md-12",
+        "col-lg-auto",
+        "ms-2",
+        "me-2",
+        "underline-hover-effect"
+      );
       label.setAttribute("for", categoria.replace(" ", "__"));
       label.innerHTML = ` <input id=${categoria.replace(
         " ",

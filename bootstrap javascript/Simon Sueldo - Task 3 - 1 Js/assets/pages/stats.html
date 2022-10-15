@@ -9,6 +9,7 @@
             integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
       <link rel="stylesheet" href="./../css/styles.css">
       <script src="https://kit.fontawesome.com/3f5befe6ae.js" crossorigin="anonymous"></script>
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -16,7 +17,7 @@
       <header>
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
                   <div class="container">
-                        <a class="navbar-brand" href="./../../index.html"><img
+                        <a class="navbar-brand" href="./../../index.html" data-aos="zoom-in"><img
                                     src="https://res.cloudinary.com/greenhome/image/upload/v1663423711/Amazing%20Events/logo_fcmxpp.png"
                                     alt="Descripcion de imagen" height="70"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -70,7 +71,9 @@
                               <div class="overlay">
                                     <div class="container">
                                           <div class="row align-items-center">
-                                                <div class="col-md-6 offset-md-6 text-center text-md-end">
+                                                <div class="col-md-6 offset-md-6 text-center text-md-end"
+                                                      data-aos="fade-right" data-aos-offset="300"
+                                                      data-aos-easing="ease-in-sine">
                                                       <h2 class="fw-bold">STATS</h2>
                                                 </div>
                                           </div>
@@ -103,6 +106,8 @@
                                     </td>
                               </tr>
                         </tbody>
+                  </table>
+                  <table class="table table-dark table-striped table-hover table-bordered  text-center  align-middle">
                         <thead class="table-dark">
                               <tr>
                                     <th colspan="3" class="fs-4 bg-danger">Upcoming events statistics by category
@@ -121,6 +126,8 @@
                                     </td>
                               </tr>
                         </tbody>
+                  </table>
+                  <table class="table table-dark table-striped table-hover table-bordered  text-center  align-middle">
                         <thead class="table-dark">
                               <tr>
                                     <th colspan="3" class="fs-4 bg-danger">
@@ -171,6 +178,8 @@
                   </div>
             </div>
       </footer>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>AOS.init();</script>
       <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
             </script>
