@@ -1,6 +1,7 @@
 let form = document.querySelector("form");
-form.addEventListener("click", function (e) {
+form.addEventListener("submit", function (e) {
   e.preventDefault();
+  e.stopPropagation();
   document.getElementById("errors").innerHTML = "";
   let name = document.querySelector("input[type=text]");
   let email = document.querySelector("input[type=email]");
@@ -23,8 +24,6 @@ form.addEventListener("click", function (e) {
     }).then(function () {
       location.href = "./../../index.html";
     });
-    //     setTimeout(() => {
-    //     }, 2000);
   } else {
     document.getElementById("errors").innerHTML = `
       <li>El nombre debe poseer mas de 4 caracteres</li>

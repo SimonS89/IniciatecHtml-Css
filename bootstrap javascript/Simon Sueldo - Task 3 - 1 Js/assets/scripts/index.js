@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
           "text-bg-secondary"
         );
         card.setAttribute("data-aos", "fade-up");
-        card.setAttribute("data-aos-duration", "3000");
+        card.setAttribute("data-aos-duration", "1500");
         card.innerHTML = `
                 <div class="inner">
                     <img src=${evento.image} class="card-img-top" alt=${
