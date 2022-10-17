@@ -1,0 +1,236 @@
+a,
+.btn {
+  color: white;
+  position: relative;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  text-decoration: none;
+}
+
+p a:hover,
+ul li a:hover,
+.btn:hover {
+  visibility: visible;
+  transform: scaleX(1);
+  background-color: #d90368;
+  color: black !important;
+}
+
+nav,
+footer,
+main,
+.card {
+  border: 2px solid #d90368;
+}
+
+nav ul li a:active,
+.btn:active {
+  border: 1px solid;
+  box-shadow: 3px 3px 2px black;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+.card img {
+  width: auto;
+  height: 14rem;
+  object-fit: contain;
+}
+
+.col-md-8 > img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.underline-hover-effect {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.underline-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #d90368;
+  transition: width 0.25s ease-out;
+}
+
+.underline-hover-effect:hover::before {
+  width: 100%;
+}
+
+#main .carousel-inner,
+#main .carousel-inner video,
+#main .carousel-inner img {
+  height: 50vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  z-index: 1;
+}
+
+#carousel .overlay .container {
+  height: 100%;
+}
+
+#carousel .overlay .row {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.inner {
+  overflow: hidden;
+}
+.inner img {
+  transition: all 1.5s ease-in-out;
+}
+
+.inner img:hover {
+  transform: scale(1.5);
+}
+
+.top {
+  position: sticky;
+  bottom: 1.2rem;
+  margin-right: 10px;
+  left: 100%;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bolder;
+  font-family: sans-serif;
+  color: #000;
+  background: #fff;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/*Redes Sociales */
+
+.svg-inline--fa {
+  vertical-align: -0.2em;
+}
+
+.rounded-social-buttons {
+  text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.125rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter,
+.fa-facebook-f,
+.fa-linkedin,
+.fa-youtube,
+.fa-instagram {
+  font-size: 25px;
+}
+
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
+}
+
+.rounded-social-buttons .social-button.facebook:hover,
+.rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
+}
+
+.rounded-social-buttons .social-button.whatsapp {
+  background: #25d366;
+}
+
+.rounded-social-buttons .social-button.whatsapp:hover,
+.rounded-social-buttons .social-button.whatsapp:focus {
+  color: #25d366;
+  background: #fefefe;
+  border-color: #25d366;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover,
+.rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
+}
+
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
+}
+
+.rounded-social-buttons .social-button.youtube:hover,
+.rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
+}
+
+.rounded-social-buttons .social-button.instagram {
+  background: #f09433;
+}
+
+.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:focus {
+  color: #f09433;
+  background: #fefefe;
+  border-color: #f09433;
+}
