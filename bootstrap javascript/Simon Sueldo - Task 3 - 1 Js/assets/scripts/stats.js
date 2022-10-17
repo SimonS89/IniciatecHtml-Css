@@ -78,9 +78,7 @@ window.addEventListener("load", () => {
             (evento.assistance ? evento.assistance : evento.estimate)
         )
         .reduce((accu, ele) => accu + ele)
-        .toString()
-        .split(/(?=(?:...)*$)/)
-        .join(".");
+        .toLocaleString();
       let revenuesAttendance =
         filtradosCategoria
           .map((evento) => eventComparator(evento))
