@@ -130,14 +130,18 @@ createApp({
                 (evento.assistance ? evento.assistance : evento.estimate)
             )
             .reduce((accu, ele) => accu + ele)
-            .toString()
-            .split(/(?=(?:...)*$)/)
-            .join(".")
+            .toLocaleString()
+          // .split(/(?=(?:...)*$)/)
+          // .join(".")
         );
         percentages.push(
-          filtradosCategoria
-            .map((evento) => this.eventComparator(evento))
-            .reduce((accu, ele) => accu + ele) / filtradosCategoria.length
+          (
+            filtradosCategoria
+              .map((evento) => this.eventComparator(evento))
+              .reduce((accu, ele) => accu + ele) / filtradosCategoria.length
+          )
+            .toFixed(2)
+            .toLocaleString()
         );
       });
       return {
