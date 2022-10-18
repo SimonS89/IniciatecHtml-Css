@@ -131,8 +131,6 @@ createApp({
             )
             .reduce((accu, ele) => accu + ele)
             .toLocaleString()
-          // .split(/(?=(?:...)*$)/)
-          // .join(".")
         );
         percentages.push(
           (
@@ -185,7 +183,7 @@ createApp({
       let filtro2 = filtro1.filter((evento) =>
         this.eventosBuscados.includes(evento.category)
       );
-      if (filtro2.length > 0) {
+      if (this.eventosBuscados.length > 0) {
         this.eventos = filtro2;
       } else {
         this.eventos = filtro1;
