@@ -13,10 +13,15 @@ window.addEventListener("load", () => {
   cargarDatos(URI);
 
   //filtrar las cards por texto ingresado
-  inputBusqueda.addEventListener("keyup", superFiltroCondicional);
+  if (
+    document.title != "MDHL Event Detail" &&
+    document.title != "MDHL Stadistics"
+  ) {
+    inputBusqueda.addEventListener("keyup", superFiltroCondicional);
 
-  //filtrar las cards por checkbox
-  formContainer.addEventListener("change", superFiltroCondicional);
+    //filtrar las cards por checkbox
+    formContainer.addEventListener("change", superFiltroCondicional);
+  }
 
   //Funciones de ayuda
   //Funcion para filtrar por texto ingresado por el usuario
