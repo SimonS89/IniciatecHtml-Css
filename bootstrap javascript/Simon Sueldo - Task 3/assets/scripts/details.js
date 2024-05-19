@@ -39,7 +39,7 @@ function renderizarDetail(evento) {
     fechaActual > evento.date
       ? " We hope to see you in our next edition of this event!"
       : " Join us, you are gonna enjoy it!"
-  }</stron>
+  }</strong>
                                                 </p>
                                                 <p class="card-text"><small class="text-warning fw-bold">Event Date : ${
                                                   evento.date

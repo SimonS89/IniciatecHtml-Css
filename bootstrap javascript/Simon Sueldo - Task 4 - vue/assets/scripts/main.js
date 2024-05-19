@@ -174,6 +174,20 @@ createApp({
         });
       });
     },
+    alert() {
+      Swal.fire({
+        title: "<strong>DONE! <u>We'll get to you soon!</u></strong>",
+        icon: "success",
+        html: "<p>We've received your messagge and we'll reply in the next days!</p>",
+        showCloseButton: true,
+        focusConfirm: false,
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+        confirmButtonAriaLabel: "Thumbs up, great!",
+        cancelButtonAriaLabel: "Thumbs down",
+      }).then(function () {
+        location.href = "./../../index.html";
+      });
+    },
   },
   computed: {
     superFiltro() {
